@@ -1,0 +1,21 @@
+$headerHeight: 64px;
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $headerHeight;
+    line-height: $headerHeight;
+}
+
+.Branding{
+    &-link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-logo{
+        height: $headerHeight / 2;
+    }
+}
+
+@import './PrimaryMenu';

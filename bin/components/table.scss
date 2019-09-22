@@ -1,0 +1,18 @@
+@mixin SnTable {
+    table{
+        width: 100%;
+        // thead{
+        //     background: $border-color;
+        // }
+        th,
+        td{
+            border: 1px solid var(--snColorBorder);
+            padding: 8px 8px;
+        }
+        tr{
+            &:hover{
+                background: rgba(#000,.01);
+            }
+        }
+    }    
+}

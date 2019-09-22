@@ -1,0 +1,24 @@
+extends ../../config/template
+append config
+  -title = "Margin"
+  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+  -ogUrl = "/index.html"
+  -template = 2
+  
+block main
+  main
+    h1= title
+    p= description
+    .SnCard.SnMb-16
+      section.SnCard-body
+        h2.SnCard-title Basic
+        p.SnCard-description 
+        .DocExample
+          .SnMt-16 Margin top 16px ...
+          .SnMb-16 Margin button 16px ...
+          .SnMt-32 Margin top 32px ...
+          .SnMb-32 Margin button 32px ...
+          .SnMt-64 Margin top 64px ...
+          .SnMb-64 Margin button 64px ...
+        pre.language-html
+            //- code= ''

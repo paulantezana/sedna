@@ -1,0 +1,41 @@
+extends ../config/template
+append config
+  -title = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -description = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -ogUrl = "/index.html"
+
+  //- -img = "/assets/img/docs-banner.jpg"
+  //- -titleBanner = "EDgrid"
+  //- -descriptionBanner = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  //- -clase = ""
+  //- -boton = false
+  //- -botonClass= ""
+  //- -botonUrl=""
+  //- -botonText =""
+  //- -botones = true
+
+block main
+  main
+    .HomeBanner
+      .SnContainer
+        h1 Sedna
+        p Sedna es una librería de CSS basado en componentes.
+        div.ChangeTheme#ChangeTheme
+          .ChangeTheme-item
+            input#theme1(type="radio", name="theme" value="1").SnRadio.SnRadio-ios
+            label(for="theme1").SnRadio-btn
+          .ChangeTheme-item
+            input#theme2(type="radio", name="theme" value="2").SnRadio.SnRadio-ios
+            label(for="theme2").SnRadio-btn
+          .ChangeTheme-item
+            input#theme3(type="radio", name="theme" value="3").SnRadio.SnRadio-ios
+            label(for="theme3").SnRadio-btn
+          .ChangeTheme-item
+            input#theme4(type="radio", name="theme" value="4").SnRadio.SnRadio-ios
+            label(for="theme4").SnRadio-btn
+          .ChangeTheme-item
+            input#theme5(type="radio", name="theme" value="5").SnRadio.SnRadio-ios
+            label(for="theme5").SnRadio-btn
+          .ChangeTheme-description selecciona un tema
+        a(href="/docs/starter.html").SnBtn.primary Getting Started
+        //- a(href="/docs").SnBtn Docs

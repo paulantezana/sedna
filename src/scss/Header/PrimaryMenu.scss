@@ -1,0 +1,91 @@
+// Estilos generales
+.PrimaryMenu {
+    @extend %snList;
+    a {
+        text-decoration: none;
+        line-height: 30px;
+        height: 30px;
+        display: block;
+        padding: 0 12px;
+        // &.is-toggle {
+        //     display: flex;
+        //     justify-content: space-between;
+        // }
+    }
+}
+
+// Estilos en el menu mobile
+.PrimaryMenu {
+    @include to(l) {
+        &-content {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+            right: -100%;
+            background: var(--snColorDark);
+            transition: right .4s;
+            width: 90vw;
+        }
+        a {
+            color: var(--snColorDarkInverse);
+        }
+        .sub-menu {
+            margin-left: 32px;
+        }
+    }
+}
+
+// Cuando se a
+.PrimaryMenu-is-show {
+    .PrimaryMenu-content {
+        right: 0;
+    }
+}
+
+// #PrimaryMenu-close {
+//     padding-top: 64px;
+//     display: flex;
+//     justify-content: center;
+//     font-size: 32px;
+//     // color: $menu-mobile-color;
+//     margin-bottom: 16px;
+//     cursor: pointer;
+//     @include from(l) {
+//         display: none;
+//     }
+// }
+
+// Estilos en el escritorio
+.PrimaryMenu {
+    @include from(l) {
+        &-content{
+            display: flex;
+            align-items: center;
+        }
+        display: flex;
+        a {
+            color: var(--snColorText);
+            &:hover{
+                color: var(--snColor1);
+            }
+        }
+        & > li > a {
+            // font-weight: bold;
+            // line-height: $headerHeight;
+            // height: 50px;
+            // color: white;
+        }
+    }
+}
+
+// Primary Menu - toggle
+#PrimaryMenu-toggle {
+    // font-size: 3rem;
+    // line-height: 70px;
+    // height: 70px;
+    cursor: pointer;
+    @include from(l){
+        display: none;
+    }
+}

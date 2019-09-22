@@ -1,0 +1,20 @@
+-
+  let menu = {
+    'Docs': '/docs',
+    'UI': '/ui',
+    'Examples': '/examples',
+    'GitHub': '/github',
+    'Paulantezana': 'https://paulantezana.com' 
+  };
+
+nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation").PrimaryMenu-nav
+  #PrimaryMenu-toggle.icon-menu
+  .PrimaryMenu-content
+    ul.PrimaryMenu#PrimaryMenu
+      each val, key in menu
+        - var target = val === 'https://paulantezana.com' ? '"_blank"' : ''
+        li(itemprop="url")
+          a(href=val target=target itemprop="name" title= "Enlace de " + key)= key
+    div
+      input#themeMode.SnSwitch.SnSwitch-ios(type = "checkbox")
+      label.SnSwitch-btn(for = "themeMode")

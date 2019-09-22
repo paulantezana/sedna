@@ -1,0 +1,48 @@
+extends ../../config/template
+append config
+  -title = "Forms"
+  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+  -ogUrl = "/index.html"
+  -template = 2
+  
+block main
+  main
+    h1= title
+    p= description
+    .SnCard.SnMb-16
+      section.SnCard-body
+        h2.SnCard-title Basic
+        p.SnCard-description 
+        .DocExample
+          form(action="", method="post").SnForm
+            .SnForm-item.required
+              label(for="userName").SnForm-label User Name
+              input#userName(type="text", name="userName").SnForm-input
+            .SnForm-item
+              label(for="password").SnForm-label Password
+              input#password(type="password", name="password").SnForm-input
+            .SnBtn.block.primary Login
+        pre.language-html
+            //- code= ''
+    .SnCard.SnMb-16
+      section.SnCard-body
+        h2.SnCard-title Basic
+        p.SnCard-description 
+        .DocExample
+          form(action="", method="post").SnForm.horizontal
+            .SnForm-item.required
+              label(for="fullName").SnForm-label Full Name
+              input#fullName(type="text", name="fullName").SnForm-input
+            .SnForm-item
+              label(for="adress").SnForm-label Adress
+              input#adress(type="text", name="adress").SnForm-input
+            .SnForm-item
+              label(for="gender").SnForm-label Gender
+              select#gender(name="gender").SnForm-select
+                option(value="man") Man
+                option(value="woman") Woman
+            .SnForm-item
+              label(for="message").SnForm-label Message
+              textarea#message(name="message", cols="3", rows="10").SnForm-textarea
+        pre.language-html
+            //- code= ''

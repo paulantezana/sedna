@@ -1,0 +1,65 @@
+$asideMenuWidth: 220px;
+.AsideMenu{
+    @extend %snList;
+    li.is-active{
+        a {
+            background: var(--snColor1);
+            color: var(--snColor1Inverse);
+        }
+    }
+    a{
+        line-height: 2.5rem;
+        display: block;
+        padding: 0 1rem;
+        &:hover{
+            background: var(--snColorHover);
+        }
+    }
+    &-nav{
+        overflow-y: auto;
+        height: 100%;
+    }
+    &-container{
+        @include to(l){
+            position: fixed;
+            top: 0;
+            left: -#{$asideMenuWidth};
+            transition: left .4s;
+            height: 100vh;
+            background: var(--snColorBg);
+            z-index: 100;
+            width: $asideMenuWidth;
+            border-right: 1px solid var(--snColorBorder);
+            
+        }
+    }
+}
+
+.AsideMenu-is-show{
+    .AsideMenu-container{
+        left: 0;
+        box-shadow: 1px 0 40px rgba(black,.2);
+    }
+}
+
+#AsideMenu-toggle{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    height: 2rem;
+    width: 1.5rem;
+    background: var(--snColorBg);
+    cursor: pointer;
+    border: 1px solid var(--snColorBorder);
+    border-left: var(--snColorBg);
+    border-radius: 0 10px 10px 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include from(l){
+        display: none;
+    }
+}

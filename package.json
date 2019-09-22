@@ -1,0 +1,48 @@
+{
+  "name": "sedna",
+  "version": "0.7.0",
+  "description": "libreria css javascript",
+  "main": "bin/sedna.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "server": "webpack-dev-server",
+    "pro": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulantezana/sedna.git"
+  },
+  "author": "paulantezana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulantezana/sedna/issues"
+  },
+  "homepage": "https://github.com/paulantezana/sedna#readme",
+  "style": "bin/sedna.scss",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "pug-html-loader": "^1.1.5",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ]
+}

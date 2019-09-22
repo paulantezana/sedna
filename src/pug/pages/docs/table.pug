@@ -1,0 +1,37 @@
+extends ../../config/template
+append config
+  -title = "Buttons"
+  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+  -ogUrl = "/index.html"
+  -template = 2
+  
+block main
+  main
+    h1= title
+    p= description
+    .SnCard.SnMb-16
+      section.SnCard-body
+        h2.SnCard-title Basic
+        p.SnCard-description 
+        .DocExample
+          table
+            thead
+              tr
+                th Column 1
+                th Column 2
+                th Column 3
+            tboddy
+              tr
+                td Row 1
+                td Row 2
+                td Row 3
+              tr
+                td Row 1
+                td Row 2
+                td Row 3
+              tr
+                td Row 1
+                td Row 2
+                td Row 3
+        pre.language-html
+            //- code= ''

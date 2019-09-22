@@ -1,0 +1,25 @@
+-
+  let sidebar = {
+    'Starter': '/docs/starter.html',
+    'Theme': '/docs/theme.html',
+    'Alert': '/docs/alert.html',
+    'Avatar': '/docs/avatar.html',
+    'Button': '/docs/button.html',
+    'Card': '/docs/card.html',
+    'Form': '/docs/form.html',
+    'Grid': '/docs/grid.html',
+    'List': '/docs/list.html',
+    'Margin': '/docs/margin.html',
+    'Menu': '/docs/menu.html',
+    'Modal': '/docs/modal.html',
+    'Table': '/docs/table.html',
+    'Video': '/docs/video.html'
+  }
+
+aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").AsideMenu-container
+  #AsideMenu-toggle(data-content="Filtros").icon-right
+  nav(itemscope itemtype="http://schema.org/WPSideBar").AsideMenu-nav
+    ul#AsideMenu.AsideMenu
+      each val, key in sidebar
+        li(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key

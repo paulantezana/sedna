@@ -1,0 +1,220 @@
+$cssCore: true;
+@import "../../bin/sedna.scss";
+@import "../prism/prism.scss";
+
+// :root{
+//     --snColor1: #9A40D6;
+//     --snColor1Inverse: #FFFFFF;
+//     --snColor1Light: #b358f0;
+//     --snColor1Dark: #8c30c9;
+
+//     // second color
+//     --snColor2: #faad14;
+//     --snColor2Inverse: #FFFFFF;
+
+//     // Colores que se usaran en los estados del calendario
+//     --snError: #D73553;
+//     --snSuccess: #31B243;
+//     --snWarning: #FFC200;
+//     --snDisable: #d9d9d9;
+
+//     // Colores de fondo
+//     --snColorBg: #2A3B47;
+//     --snColorBgAlt: #22323d;
+//     --snColorHover: #0000000d;
+
+//     // Colores de texto
+//     --snColorText: #cad8e2;
+//     --snColorTextAlt: #94aab9;
+
+//     // Color del borde de forma general
+//     --snColorBorder: #374b58;
+
+//     // Darck styles
+//     --snColorDark: #2A3B47;
+//     --snColorDarkAlt: hsl(208, 29%, 10%);
+//     --snColorDarkInverse: #b6bcc0;
+// }
+
+@import "./Header/index";
+
+body {
+  margin: 0;
+  background: var(--snColorBg);
+  color: var(--snColorText);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+a {
+  color: var(--snColor1Light);
+  text-decoration: none;
+  &:hover {
+    color: var(--snColor1Dark);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+.Site {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  &-header {
+    // border-bottom: 1px solid var(--snColorBorder);
+  }
+  &-footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--snColorTextAlt);
+  }
+}
+
+.HomeBanner {
+  padding: 4rem 0;
+  text-align: center;
+  h1 {
+    font-size: 4rem;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.ChangeTheme {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  &-item {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  &-description {
+    flex: 0 0 100%;
+    font-size: 0.8rem;
+    color: var(--snColorTextAlt);
+  }
+}
+
+@import "Main";
+@import "AsideMenu";
+@import "Docs";
+
+.SnSwitch {
+  display: none;
+  + .SnSwitch-btn {
+    outline: 0;
+    display: block;
+    width: 3em;
+    height: 1.5em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &:after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      left: 0;
+    }
+  }
+
+  &:checked + .SnSwitch-btn:after {
+    left: 50%;
+  }
+}
+
+// themes
+.SnSwitch-ios {
+  + .SnSwitch-btn {
+    background: var(--snColorBg);
+    border-radius: 2em;
+    padding: 2px;
+    transition: all 0.4s ease;
+    border: 1px solid var(--snColorBorder);
+    &:after {
+      border-radius: 2em;
+      background: var(--snColorBorder);
+      transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    }
+
+    &:hover:after {
+      will-change: padding;
+    }
+
+    &:active {
+      &:after {
+        padding-right: 0.8em;
+      }
+    }
+  }
+
+  &:checked + .SnSwitch-btn {
+    border: 1px solid var(--snColor1) !important;
+    &:active {
+      &:after {
+        margin-left: -0.8em;
+      }
+    }
+    &:after {
+      background: var(--snColor1);
+    }
+  }
+}
+
+.SnRadio {
+  display: none;
+
+  + .SnRadio-btn {
+    outline: 0;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &:after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.SnRadio-ios {
+  + .SnRadio-btn {
+    background: var(--snColorBg);
+    border-radius: 2em;
+    padding: 2px;
+    // transition: all 0.4s ease;
+    border: 1px solid var(--snColorBorder);
+    &:after {
+      border-radius: 2em;
+      background: var(--snColorBorder);
+    }
+
+    &:hover:after {
+      will-change: padding;
+    }
+  }
+
+  &:checked + .SnRadio-btn {
+    border: 1px solid var(--snColor1) !important;
+    &:after {
+      background: var(--snColor1);
+    }
+  }
+}
