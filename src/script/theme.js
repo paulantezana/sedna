@@ -16,7 +16,7 @@ export class Theme {
                 snColorDarkInverse: '#b6bcc0',
             },
             'light': {
-                snColorBg: '#FFFFFF',
+                snColorBg: '#EFF3F6',
                 snColorBgAlt: '#f5f5f5',
                 snColorHover: '#0000000d',
 

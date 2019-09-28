@@ -16,7 +16,7 @@ SnMenu({
     menuId: 'PrimaryMenu',
     toggleButtonID: 'PrimaryMenu-toggle',
     toggleClass: 'PrimaryMenu-is-show',
-    parentClose: true,
+    parentClose: false,
     menuCloseID: 'PrimaryMenu-close',
 });
 

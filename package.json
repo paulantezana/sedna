@@ -1,6 +1,6 @@
 {
   "name": "sedna",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "description": "libreria css javascript",
   "main": "bin/sedna.js",
   "directories": {
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/paulantezana/sedna/issues"
   },
-  "homepage": "https://github.com/paulantezana/sedna#readme",
+  "homepage": "https://paulantezana.github.io/Sedna",
   "style": "bin/sedna.scss",
   "devDependencies": {
     "@babel/core": "^7.6.0",

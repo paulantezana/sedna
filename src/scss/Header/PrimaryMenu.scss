@@ -3,14 +3,19 @@
     @extend %snList;
     a {
         text-decoration: none;
-        line-height: 30px;
-        height: 30px;
+        line-height: 32px;
+        height: 32px;
         display: block;
         padding: 0 12px;
-        // &.is-toggle {
-        //     display: flex;
-        //     justify-content: space-between;
-        // }
+        &.is-toggle {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 0;
+        }
+        [class*="icon-"]:before{
+            position: relative;
+            top: 2px;
+        }
     }
 }
 
@@ -22,16 +27,21 @@
             width: 100vw;
             height: 100vh;
             z-index: 999;
-            right: -100%;
-            background: var(--snColorDark);
-            transition: right .4s;
-            width: 90vw;
+            left: -100%;
+            top: 0;
+            background: var(--snColorBgAlt);
+            transition: left .4s;
+            width: 80vw;
+            padding: 1rem 0;
+            border-right: 1px solid var(--snColorBorder);
         }
         a {
-            color: var(--snColorDarkInverse);
-        }
-        .sub-menu {
-            margin-left: 32px;
+            color: var(--snColorText);
+            // border-radius: 32px;
+            padding: 0 12px;
+            &:hover{
+                background: var(--snColorHover);
+            }
         }
     }
 }
@@ -39,7 +49,7 @@
 // Cuando se a
 .PrimaryMenu-is-show {
     .PrimaryMenu-content {
-        right: 0;
+        left: 0;
     }
 }
 
@@ -67,23 +77,28 @@
         a {
             color: var(--snColorText);
             &:hover{
-                color: var(--snColor1);
+                color: var(--snColorText);
             }
         }
-        & > li > a {
-            // font-weight: bold;
-            // line-height: $headerHeight;
-            // height: 50px;
-            // color: white;
+        li{
+            ul{
+                background: var(--snColorBgAlt);
+                box-shadow: 0 2px 16px -2px rgba(#000000, 0.10);
+                border-radius: 0.25rem;
+                min-width: 150px;
+                a {
+                    &:hover{
+                        background: var(--snColorHover);
+                    }
+                }
+            }
         }
     }
 }
 
 // Primary Menu - toggle
 #PrimaryMenu-toggle {
-    // font-size: 3rem;
-    // line-height: 70px;
-    // height: 70px;
+    font-size: 1.4rem;
     cursor: pointer;
     @include from(l){
         display: none;

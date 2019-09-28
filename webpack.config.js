@@ -18,8 +18,8 @@ const getFilesInFolder = (base = '.', scanSubDirectories = false, regularExpress
 
             if (!regularExpression.test(fullPath)) return;
 
-            const fileName = fullPath.replace(rootPath,'').replace(/\\/g,'/').trim().replace(/^[\/]+|[\/]+$/g,'');
-            const absPath = '.' + fullPath.replace(path.resolve(__dirname, '.'),'').replace(/\\/g,'/').trim();
+            const fileName = fullPath.replace(rootPath, '').replace(/\\/g, '/').trim().replace(/^[\/]+|[\/]+$/g, '');
+            const absPath = '.' + fullPath.replace(path.resolve(__dirname, '.'), '').replace(/\\/g, '/').trim();
             files.push({ fileName, path: absPath });
         });
     }
@@ -32,7 +32,7 @@ const getFilesInFolder = (base = '.', scanSubDirectories = false, regularExpress
 let pugPages = getFilesInFolder('./src/pug/pages', true, /\.(pug)$/);
 pugPages = pugPages.map(item => {
     return new HtmlWebpackPlugin({
-        filename: item.fileName.replace('.pug','.html'),
+        filename: item.fileName.replace('.pug', '.html'),
         minify: {
             collapseWhitespace: false
         },
@@ -44,10 +44,11 @@ pugPages = pugPages.map(item => {
 module.exports = {
     entry: {
         app: './src/app.js',
+        dist: './src/dist.js',
     },
     output: {
         path: path.resolve(__dirname, "docs"),
-        filename: '[name].js'
+        filename: 'assets/script/[name].js'
     },
     devServer: {
         contentBase: path.join(__dirname, "docs"),
@@ -65,13 +66,13 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        // options: {
-                        // url: false,
-                        // minimize: true,
-                        // sourceMap: true,
-                        // modules: true,
-                        // localIdentName: '[local]__[hash:base64:5]',
-                        // }
+                        options: {
+                            // url: false,
+                            // minimize: true,
+                            sourceMap: true,
+                            // modules: true,
+                            // localIdentName: '[local]__[hash:base64:5]',
+                        }
                     },
                     {
                         loader: 'postcss-loader'
@@ -97,7 +98,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "css/[name].css",
+            filename: "assets/css/[name].css",
             chunkFilename: "[id].css"
         }),
         ...pugPages,

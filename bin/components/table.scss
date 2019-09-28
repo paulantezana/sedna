@@ -1,18 +1,30 @@
 @mixin SnTable {
-    table{
+    .#{$classPrefix}Table-container{
+
+    }
+
+    .#{$classPrefix}Table{
         width: 100%;
-        // thead{
-        //     background: $border-color;
-        // }
+        border-collapse: collapse;
         th,
         td{
             border: 1px solid var(--snColorBorder);
             padding: 8px 8px;
+            text-align: left;
+        }
+        thead,
+        tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
         }
         tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
             &:hover{
                 background: rgba(#000,.01);
             }
         }
-    }    
+    }
 }
