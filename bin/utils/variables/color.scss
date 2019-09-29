@@ -1,15 +1,17 @@
 :root{
-    // --snColor1: #1890ff;
-    // --snColor1Inverse: #FFFFFF;
-    // --snColor1Light: #40a9ff;
-    // --snColor1Dark: #096dd9;
-    --snColor1: #9A40D6;
-    --snColor1Inverse: #FFFFFF;
+    --snColor1Lighter: #b358f0;
     --snColor1Light: #b358f0;
+    --snColor1: #9A40D6;
     --snColor1Dark: #8c30c9;
+    --snColor1Darker: #8c30c9;
+    --snColor1Inverse: #FFFFFF;
     
     // second color
+    --snColor2Lighter: #ffd685;
+    --snColor2Light: #ffc757;
     --snColor2: #faad14;
+    --snColor2Dark: #ffa600;
+    --snColor2Darker: #eb9c00;
     --snColor2Inverse: #FFFFFF;
 
     // Colores que se usaran en los estados del calendario
@@ -26,12 +28,17 @@
     // Colores de texto
     --snColorText: #333333;
     --snColorTextAlt: rgb(202, 202, 202);
-
+    
     // Color del borde de forma general
     --snColorBorder: #DFE2E2;
 
     // Darck styles
-    --snColorDark: #2A3B47;
-    --snColorDarkAlt: hsl(208, 29%, 10%);
+    --snColorDarkSmoother: #4f7087;
+    --snColorDarkSmooth: #3c5567;
+    --snColorDark: #2a3b47;
+    --snColorDarker: #22303a;
+    --snColorDarkest: #1a252d;
     --snColorDarkInverse: #b6bcc0;
+
+    --snColorDarkAlt: #22303a; // deprecated next version
 }

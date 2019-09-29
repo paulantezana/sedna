@@ -15,7 +15,8 @@ export const SnMenu = ({
     contextId = "Site",
     toggleClass = "Menu-is-show",
     parentClose = false,
-    menuCloseID = ''
+    menuCloseID = '',
+    wrapperId = '',
 }) => {
     // Get Menu
     let menuEl = document.getElementById(menuId);
@@ -62,6 +63,16 @@ export const SnMenu = ({
         let menuClose = document.getElementById(menuCloseID);
         if (menuClose) {
             menuClose.addEventListener("click", () => {
+                context.classList.remove(toggleClass);
+            });
+        }
+    }
+
+    // Menu close quitar la clase
+    if(wrapperId!== ''){
+        let wrapper = document.getElementById(wrapperId);
+        if (wrapper) {
+            wrapper.addEventListener("click", () => {
                 context.classList.remove(toggleClass);
             });
         }
