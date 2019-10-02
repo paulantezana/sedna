@@ -8,7 +8,7 @@ import { Theme } from './script/theme';
 // Modal
 SnModal();
 window.onload = () => {
-    modal.init();
+    snModal.init();
 }
 
 // Primary Menu
@@ -37,3 +37,16 @@ SnActiveMenu([...document.querySelectorAll('#AsideMenu a')]);
 
 
 new Theme();
+
+
+let openCustomConfirm = document.getElementById('openCustomConfirm');
+if(openCustomConfirm){
+    openCustomConfirm.addEventListener('click',(e)=>{
+        e.preventDefault();
+        window.snModal.confirm({
+            confirm: false,
+            content: 'Some descriptions',
+            title: 'Are you sure delete this task?',
+        })
+    });
+}

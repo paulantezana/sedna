@@ -1,3 +1,20 @@
+const GenerateUniqueId = (length = 6) => {
+	let timestamp = +new Date;
+
+	let _getRandomInt = function( min, max ) {
+		return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+	};
+
+	let ts = timestamp.toString();
+	let parts = ts.split( "" ).reverse();
+	let id = "";
+	for( let i = 0; i < length; ++i ) {
+		let index = _getRandomInt( 0, parts.length - 1 );
+		id += parts[index];
+	}
+	return id;
+};
+
 export const SnModal = () => {
     // let modalWrapper = null
     let dataModals = null
@@ -101,7 +118,59 @@ export const SnModal = () => {
             closeModal(modal)
             typeof cb === 'function' && cb()
         },
+
+        confirm({ 
+            confirm = true,
+            title = '',
+            cancelText = 'No',
+            okText = 'Si',
+            content = '',
+            onOk = () => {},
+            onCancel= () => {}
+        }){
+            let uniqueIdName = 'Sn' + GenerateUniqueId();
+            let divEl = document.createElement('div');
+
+            let cancelTemp = confirm 
+                ? `<div class="SnBtn error" id="cancel${uniqueIdName}">${cancelText}</div>`
+                : '';
+
+            divEl.innerHTML = `
+                <div class="SnModal-wrapper" data-modal="${uniqueIdName}" >
+                    <div class="SnModal">
+                        <div class="SnModal-body">
+                            <div class="SnModal-confirmTile">${title}</div>
+                            <div class="SnModal-confirmContent">${content}</div>
+                            <div class="SnModal-confirmBtns">
+                                ${cancelTemp}
+                                <div class="SnBtn primary" id="ok${uniqueIdName}">${okText}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(divEl);
+            api.open(uniqueIdName);
+
+            let btnCancel = document.getElementById(`cancel${uniqueIdName}`);
+            if(btnCancel){
+                btnCancel.addEventListener('click',e=>{
+                    e.preventDefault();
+                    api.close(uniqueIdName);
+                    onCancel();
+                });
+            }
+
+            let btnOk = document.getElementById(`ok${uniqueIdName}`);
+            if(btnOk){
+                btnOk.addEventListener('click',e=>{
+                    e.preventDefault();
+                    api.close(uniqueIdName);
+                    onOk();
+                });
+            }
+        }
     }
 
-    window.modal = api
+    window.snModal = api
 }

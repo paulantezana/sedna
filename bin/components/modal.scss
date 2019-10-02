@@ -69,5 +69,22 @@
     &-body {
       padding: 24px;
     }
+    &-confirmTile{
+      font-weight: 500;
+      font-size: 16px;
+    }
+    &-confirmContent{
+      color: var(--snColorTextAlt);
+      margin-top: 8px;
+    }
+    &-confirmBtns{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 24px;
+      & > * {
+        margin-right: 8px;
+      }
+    }
   }
 }
