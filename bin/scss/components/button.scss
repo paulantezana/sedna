@@ -21,12 +21,29 @@
 @mixin SnBtn {
   .#{$classPrefix}Btn {
     @include SnBtnStnd;
-
+    background: transparent;
     &.loading {
       @include SnLoadingTemplate(1em);
       padding-left: 15px + 24;
       &::before {
         border: 2px solid var(--snColorText);
+      }
+    }
+    &-group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      & > * {
+        border-radius: 0;
+        &:last-child {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+        &:first-child {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
       }
     }
 
@@ -70,14 +87,14 @@
       }
     }
     &.success {
-      color: white;
-      background-color: var(--snSuccess);
-      border-color: var(--snSuccess);
+      color: var(--snSuccessInverse);
+      background-color: var(--snSuccessLight);
+      border-color: var(--snSuccessLight);
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
       &:hover {
-        background-color: #34c447;
-        border-color: #34c447;
+        background-color: var(--snSuccess);
+        border-color: var(--snSuccess);
       }
       &:focus,
       &:active {
@@ -85,18 +102,18 @@
         border-color: #25a135;
       }
       &.loading::before {
-        border: 2px solid white;
+        border: 2px solid  var(--snSuccessInverse);
       }
     }
     &.warning {
-      color: white;
-      background-color: var(--snWarning);
-      border-color: var(--snWarning);
+      color: var(--snWarningInverse);
+      background-color: var(--snWarningLight);
+      border-color: var(--snWarningLight);
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
       &:hover {
-        background-color: #ffd139;
-        border-color: #ffd139;
+        background-color: var(--snWarning);
+        border-color: var(--snWarning);
       }
       &:focus,
       &:active {
@@ -104,26 +121,26 @@
         border-color: #ffa600;
       }
       &.loading::before {
-        border: 2px solid white;
+        border: 2px solid var(--snWarningInverse);
       }
     }
     &.error {
-      color: white;
-      background-color: var(--snError);
-      border-color: var(--snError);
+      color: var(--snErrorInverse);
+      background-color: var(--snErrorLight);
+      border-color: var(--snErrorLight);
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
       &:hover {
-        background-color: #e43d5c;
-        border-color: #e43d5c;
+        background-color: var(--snError);
+        border-color: var(--snError);
       }
       &:focus,
       &:active {
-        background-color: #d32a49;
-        border-color: #d32a49;
+        background-color: var(--snErrorDark);
+        border-color: var(--snErrorDark);
       }
       &.loading::before {
-        border: 2px solid white;
+        border: 2px solid var(--snErrorInverse);
       }
     }
     &.white {
@@ -149,7 +166,8 @@
     &[disabled] {
       opacity: 0.6;
       box-shadow: none;
-      cursor: no-drop;
+      touch-action: none;
+      pointer-events: none;
     }
   }
 }

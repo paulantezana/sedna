@@ -1,6 +1,6 @@
 {
   "name": "sedna",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "description": "libreria css javascript",
   "main": "bin/sedna.js",
   "directories": {

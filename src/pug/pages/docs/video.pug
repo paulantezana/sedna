@@ -1,20 +1,16 @@
 extends ../../config/template
 append config
-  -title = "Buttons"
-  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-  -ogUrl = "/index.html"
-  -template = 2
-  
+    -title = "Video"
+    -description = "video"
+    -ogUrl = "/index.html"
+    -template = 2
+
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Basic
-        p.SnCard-description 
+    section.SnMb-16
+        h2 Basic
+        p 
         .DocExample
-          .SnVideo
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            .SnVideo
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         pre.language-html
-            //- code= ''
+            code= '<div class="SnVideo">\n    <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0"\n        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>\n</div>'

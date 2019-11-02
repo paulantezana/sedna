@@ -1,22 +1,28 @@
 extends ../../config/template
 append config
-  -title = "Cards"
-  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-  -ogUrl = "/index.html"
-  -template = 2
+    -title = "Cards"
+    -description = "Simple rectangular container."
+    -ogUrl = "/index.html"
+    -template = 2
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Basic
-        p.SnCard-description 
+    section.SnMb-16
+        h2 Basic
+        p A basic card containing a title, content and an extra corner content.
         .DocExample
-          .SnCard
-            .SnCard-header
-            .SnCard-body
-              h2.SnCard-title Card title
-              p.SnCard-description Card content ...
+            .SnCard
+                .SnCard-header Card header
+                .SnCard-body
+                    h2.SnCard-title Card title
+                    p.SnCard-description Card content ...
         pre.language-html
-            //- code= ''
+            code= '<div class="SnCard">\n    <div class="SnCard-header">Card header</div>\n    <div class="SnCard-body">\n        <h2 class="SnCard-title">Card title</h2>\n        <p class="SnCard-description">Card content ...</p>\n    </div>\n</div>'
+        h2 Hoverable
+        p hover
+        .DocExample
+            .SnCard.hoverable
+                .SnCard-header Card header
+                .SnCard-body
+                    h2.SnCard-title Card title
+                    p.SnCard-description Card content ...
+        pre.language-html
+            code= '<div class="SnCard hoverable">\n    <div class="SnCard-header">Card header</div>\n    <div class="SnCard-body">\n        <h2 class="SnCard-title">Card title</h2>\n        <p class="SnCard-description">Card content ...</p>\n    </div>\n</div>'

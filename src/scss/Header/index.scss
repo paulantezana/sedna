@@ -1,4 +1,4 @@
-$headerHeight: 64px;
+$headerHeight: 58px;
 .Header{
     display: flex;
     justify-content: space-between;
@@ -15,6 +15,16 @@ $headerHeight: 64px;
     }
     &-logo{
         height: $headerHeight / 2;
+        margin-right: 8px;
+    }
+    &-name{
+        color: var(--snColor1);
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        a:hover{
+            color: var(--snColor1);
+        }
     }
 }
 

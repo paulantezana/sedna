@@ -43,8 +43,8 @@ pugPages = pugPages.map(item => {
 
 module.exports = {
     entry: {
+        sedna: './src/sedna.js',
         app: './src/app.js',
-        dist: './src/dist.js',
     },
     output: {
         path: path.resolve(__dirname, "docs"),

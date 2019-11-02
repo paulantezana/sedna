@@ -3,16 +3,24 @@ $asideMenuWidth: 220px;
     @extend %snList;
     li.is-active{
         a {
-            background: var(--snColor1);
-            color: var(--snColor1Inverse);
+            background: var(--snColorHover);
+            // color: var(--snColor1Inverse);
+            // border-right: 2px solid var(--snColor1);
         }
     }
-    a{
-        line-height: 2.5rem;
-        display: block;
-        padding: 0 1rem;
-        &:hover{
-            background: var(--snColorHover);
+    &-header{
+        font-weight: 500;
+        padding: 8px 0;
+        color: var(--snColorTextAlt);
+    }
+    &-item{
+        a{
+            display: block;
+            padding: 8px 1rem;
+            color: var(--snColorText);
+            &:hover{
+                background: var(--snColorHover);
+            }
         }
     }
     &-nav{

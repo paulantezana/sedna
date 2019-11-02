@@ -1,81 +1,77 @@
 extends ../../config/template
 append config
-  -title = "Menu"
-  -description = "El menú de navegación es importante para un sitio web, ayuda a los usuarios a saltar rápidamente de una sección del sitio a otra. Principalmente, incluye navegación superior y navegación lateral. La navegación superior proporciona todas las categorías y funciones del sitio web. La navegación lateral proporciona la estructura de niveles múltiples del sitio web"
-  -ogUrl = "/index.html"
-  -template = 2
-  
+    -title = "Menu"
+    -description = "Menu list of Navigation."
+    -ogUrl = "/index.html"
+    -template = 2
+
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Basic
-        p.SnCard-description 
+    section.SnMb-16
+        h2 Top Navigation
+        p Horizontal top navigation menu.
         .DocExample
-          ul.SnMenu#PrimaryMenu
-            li: a(href="") Home
-            li: a(href="") Components
-            li: a(href="") Mixin
-            li: a(href="") Vars
+            ul.SnMenu#PrimaryMenu
+                li: a(href="") Home
+                li: a(href="") Components
+                li: a(href="") Mixin
+                li: a(href="") Vars
         pre.language-javascript
             code.
-              import { SnMenu } from 'sedna/bin/script/menu';
+                import { SnMenu } from 'sedna/bin/script/menu';
 
-              SnMenu({
-                  menuId: 'PrimaryMenu',
-                  toggleButtonID: 'PrimaryMenu-toggle',
-                  contextId = "Site",
-                  toggleClass: 'PrimaryMenu-is-show',
-                  parentClose: true,
-                  menuCloseID: 'PrimaryMenu-close',
-              });
+                SnMenu({
+                    menuId: 'PrimaryMenu',
+                    toggleButtonID: 'PrimaryMenu-toggle',
+                    contextId = "Site",
+                    toggleClass: 'PrimaryMenu-is-show',
+                    parentClose: true,
+                    menuCloseID: 'PrimaryMenu-close',
+                });
         pre.language-html
             code='<body class="Site">\n <div class="icon-menu" id="PrimaryMenu-toggle"></div>\n <ul class="PrimaryMenu" id="PrimaryMenu">\n  <li>\n   <a href="/docs">Docs</a>\n  </li>\n  <li>\n   <a href="/ui">UI</a>\n  </li>\n </ul>\n</body>'
         h3 API
         table.SnTable
-          thead
-            tr
-              th Propiedad
-              th Descripción
-              th Tipo
-              th Default
-              th Versión
-          tbody
-            tr
-              td menuId
-              td id del menu
-              td string
-              td Menu
-              td
-            tr
-              td toggleButtonID
-              td botton que ocula y muestra el menu
-              td string
-              td Menu-toggle
-              td
-            tr
-              td contextId
-              td Contexto donde trabaja el menu
-              td string
-              td Site
-              td
-            tr
-              td toggleClass
-              td clase css que se agrega o quita al contexto para mostrar o ocular el menu.
-              td string
-              td Menu-is-show
-              td
-            tr
-              td parentClose
-              td
-              td boolean
-              td false
-              td
-            tr
-              td menuCloseID
-              td
-              td string
-              td 
-              td
+            thead
+                tr
+                    th Propiedad
+                    th Descripción
+                    th Tipo
+                    th Default
+                    th Versión
+            tbody
+                tr
+                    td menuId
+                    td id del menu
+                    td string
+                    td Menu
+                    td
+                tr
+                    td toggleButtonID
+                    td botton que ocula y muestra el menu
+                    td string
+                    td Menu-toggle
+                    td
+                tr
+                    td contextId
+                    td Contexto donde trabaja el menu
+                    td string
+                    td Site
+                    td
+                tr
+                    td toggleClass
+                    td clase css que se agrega o quita al contexto para mostrar o ocular el menu.
+                    td string
+                    td Menu-is-show
+                    td
+                tr
+                    td parentClose
+                    td
+                    td boolean
+                    td false
+                    td
+                tr
+                    td menuCloseID
+                    td
+                    td string
+                    td 
+                    td

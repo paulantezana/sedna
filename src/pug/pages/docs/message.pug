@@ -1,0 +1,47 @@
+extends ../../config/template
+append config
+    -title = "Message"
+    -description = "Display global messages as feedback in response to user operations."
+    -ogUrl = "/index.html"
+    -template = 2
+
+block main
+    section.SnMb-16
+        h2 Normal pront
+        p Normal message for information.
+        .DocExample
+            .SnBtn.primary(onclick="SnMessage.info({content: 'This is a normal message'})") Display normal message
+        pre.language-js
+            code.
+                SnMessage.info({
+                    content: 'This is a normal message'
+                })
+    section.SnMb-16
+        h2 Other types of message
+        p Messages of success, error and warning types.
+        .DocExample
+            .SnBtn(onclick="SnMessage.success({content: 'This is a success message'})") success
+            .SnBtn(onclick="SnMessage.error({content: 'This is a error message'})") error
+            .SnBtn(onclick="SnMessage.warning({content: 'This is a warning message'})") warning
+        pre.language-js
+            code.
+                SnMessage.success({
+                    content: 'This is a success message'
+                });
+                SnMessage.error({
+                    content: 'This is a error message'
+                });
+                SnMessage.warning({
+                    content: 'This is a warning message'
+                });
+    section.SnMb-16
+        h2 Customize duration
+        p Customize message display duration from default 6s to 10s
+        .DocExample
+            .SnBtn.primary(onclick="SnMessage.info({content: 'This is a prompt message for success, and it will disappear in 10 seconds',duration: 10000})") Customized display duration
+        pre.language-js
+            code.
+                SnMessage.info({
+                    content: 'This is a prompt message for success, and it will disappear in 10 seconds',
+                    duration: 10000,
+                })

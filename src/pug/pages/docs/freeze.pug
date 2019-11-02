@@ -1,0 +1,21 @@
+extends ../../config/template
+append config
+    -title = "Freeze"
+    -description = "Freeze."
+    -ogUrl = "/index.html"
+    -template = 2
+block main
+    section.SnMb-16
+        h2 
+        .SnBtn.primary(onclick="startFreeze()") Freeze
+        script.
+            let startFreeze = () => {
+                SnFreeze.freeze();
+                setTimeout(() => {
+                    SnFreeze.unFreeze();
+                }, 2000);
+            }
+        pre.language-js
+            code.
+                SnFreeze.freze();
+                SnFreeze.unFreeze();

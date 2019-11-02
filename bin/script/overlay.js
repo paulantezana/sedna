@@ -1,4 +1,4 @@
-export const SnVideoOverlay = () => {
+const SnVideoOverlay = () => {
     let btns = document.querySelectorAll('.SnVideoOverlayBtn');
     let overlay = document.querySelectorAll('.SnVideoOverlay');
 

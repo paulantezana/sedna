@@ -1,15 +1,7 @@
 import './scss/app.scss';
 import './prism/prism';
 
-import { SnModal } from '../bin/script/modal';
-import { SnMenu, SnActiveMenu } from '../bin/script/menu';
 import { Theme } from './script/theme';
-
-// Modal
-SnModal();
-window.onload = () => {
-    snModal.init();
-}
 
 // Primary Menu
 SnMenu({
@@ -29,24 +21,4 @@ SnMenu({
     menuCloseID: 'AsideMenu-close',
 });
 
-// Active AdmissionMenu 
-SnActiveMenu([...document.querySelectorAll('#PrimaryMenu a')]);
-
-// Active AdmissionMenu 
-SnActiveMenu([...document.querySelectorAll('#AsideMenu a')]);
-
-
 new Theme();
-
-
-let openCustomConfirm = document.getElementById('openCustomConfirm');
-if(openCustomConfirm){
-    openCustomConfirm.addEventListener('click',(e)=>{
-        e.preventDefault();
-        window.snModal.confirm({
-            confirm: false,
-            content: 'Some descriptions',
-            title: 'Are you sure delete this task?',
-        })
-    });
-}

@@ -6,36 +6,29 @@ append config
   -template = 2
   
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Installation
-        p.SnCard-description We recommend using npm or yarn to install, it not only facilitates development, but also allows you to take advantage of the rich ecosystem of Javascript packages and tools.
-        .DocExample
-          .SnAvatar
-        pre.language-bash
-            code= 'npm install --save sedna'
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Using Component
-        p.SnCard-description In sedna everything is by css components. Only import the component you require.
-        .DocExample
-          .SnAvatar
-        pre.language-scss
-            code.
-              @import "~sedna/bin/sedna";
-              @include SnBtn();
-        pre.language-html
-            code= '<div class="SnBtn primary">Primary</div>'
-    //- .SnCard.SnMb-16
-    //-   section.SnCard-body
-    //-     h2.SnCard-title Solo css
-    //-     p.SnCard-description Recomendamos usar npm o yarn para instalar, no solo facilita el desarrollo, sino que también le permite aprovechar el rico ecosistema de paquetes y herramientas de Javascript.
-    //-     .DocExample
-    //-       .SnAvatar
-    //-     pre.language-bash
-    //-         code= 'npm install --save sedna'
-    //-     pre.language-bash
-    //-         code= '@import "~sedna/bin/sedna";'
+  .SnMb-16
+    h2 NPM
+
+    h3 Installation
+    p We recommend using npm or yarn to install, it not only facilitates development, but also allows you to take advantage of the rich ecosystem of Javascript packages and tools.
+    pre.language-bash
+        code= 'npm install --save sedna'
+
+    h3 Using Component
+    p In sedna everything is by css components. Only import the component you require.
+    pre.language-scss
+      code.
+        @import "~sedna/bin/sedna";
+        @include SnBtn();
+    pre.language-html
+        code= '<div class="SnBtn primary">Primary</div>'
+  .SnMb-16
+    h2 Basic
+    h3 Download
+    div.SnMb-16
+      a(href="/assets/css/sedna.css" download="sedna.css").SnBtn.primary Download Css
+    div.SnMb-16
+      a(href="/assets/script/sedna.js" download="sedna.js").SnBtn.warning Download Js
+    h3 Using
+    pre.language-html
+      code= '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <link rel="stylesheet" href="sedna.css">\n    <script src="sedna.js"></script>\n</head>\n<body>\n    <div class="SnBtn primary">Primary</div>\n</body>\n</html>\n'

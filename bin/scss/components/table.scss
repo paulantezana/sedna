@@ -1,6 +1,6 @@
 @mixin SnTable {
-    .#{$classPrefix}Table-container{
-
+    .#{$classPrefix}Table-wrapper{
+        overflow-y: auto;
     }
 
     .#{$classPrefix}Table{
@@ -23,7 +23,14 @@
             vertical-align: inherit;
             border-color: inherit;
             &:hover{
-                background: rgba(#000,.01);
+                background: var(--snColorHover);
+            }
+        }
+        &-action{
+            display: flex;
+            align-items: center;
+            & > *{
+                margin-right: 8px;
             }
         }
     }

@@ -1,25 +1,73 @@
 -
-  let sidebar = {
+  let sidebarGeneral = {
     'Starter': '/docs/starter.html',
-    'Theme': '/docs/theme.html',
-    'Alert': '/docs/alert.html',
-    'Avatar': '/docs/avatar.html',
     'Button': '/docs/button.html',
-    'Card': '/docs/card.html',
-    'Form': '/docs/form.html',
+    'Icon': '/docs/icon.html',
+    'Theme': '/docs/theme.html',
+  }
+
+-
+  let sidebarLayout = {
     'Grid': '/docs/grid.html',
-    'List': '/docs/list.html',
+    'Contain': '/docs/contain.html',
     'Margin': '/docs/margin.html',
+    'Media Query': '/docs/mediaQuery.html',
+  }
+
+-
+  let sidebarNavigation = {
     'Menu': '/docs/menu.html',
-    'Modal': '/docs/modal.html',
+    'Pagination': '/docs/pagination.html',
+  }
+
+-
+  let sidebarEntry = {
+    'Form': '/docs/form.html',
+  }
+
+-
+  let sidebarDisplay = {
+    'Avatar': '/docs/avatar.html',
+    'Card': '/docs/card.html',
+    'List': '/docs/list.html',
     'Table': '/docs/table.html',
     'Video': '/docs/video.html'
   }
+
+-
+  let sidebarFeedback = {
+    'Modal': '/docs/modal.html',
+    'Alert': '/docs/alert.html',
+    'Message': '/docs/message.html',
+    'Freeze': '/docs/freeze.html',
+  }
+
 
 aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").AsideMenu-container
   #AsideMenu-toggle(data-content="Filtros").icon-right
   nav(itemscope itemtype="http://schema.org/WPSideBar").AsideMenu-nav
     ul#AsideMenu.AsideMenu
-      each val, key in sidebar
-        li(itemprop="url")
+      li.AsideMenu-header General
+      each val, key in sidebarGeneral
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
+      li.AsideMenu-header Layout
+      each val, key in sidebarLayout
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
+      li.AsideMenu-header Navigation
+      each val, key in sidebarNavigation
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
+      li.AsideMenu-header Entry
+      each val, key in sidebarEntry
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
+      li.AsideMenu-header Display
+      each val, key in sidebarDisplay
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
+      li.AsideMenu-header Feedback
+      each val, key in sidebarFeedback
+        li.AsideMenu-item(itemprop="url")
           a(href=val itemprop="name" title= "Enlace de " + key)= key

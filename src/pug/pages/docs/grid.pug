@@ -1,49 +1,43 @@
 extends ../../config/template
 append config
-  -title = "Grids"
-  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-  -ogUrl = "/index.html"
-  -template = 2
-  
+    -title = "Grids"
+    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -ogUrl = "/index.html"
+    -template = 2
+
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title 3 cols
-        p.SnCard-description 
+    section.SnMb-16
+        h2 3 cols
+        p
         .DocExample
-          .SnGrid.m-3
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
+            .SnGrid.m-3
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
         pre.language-html
-            //- code= ''
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title 4 cols
-        p.SnCard-description 
+            code= '<div class="SnGrid m-3">\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
+    section.SnMb-16
+        h2 4 cols
+        p
         .DocExample
-          .SnGrid.m-4
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
+            .SnGrid.m-4
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
         pre.language-html
-            //- code= ''
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Responsive 1 - 12
-        p.SnCard-description 
+            code= '<div class="SnGrid m-4">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
+    section.SnMb-16
+        h2 Responsive 1 - 12
+        p
         .DocExample
-          .SnGrid.s-2.m-3.l-4.lg-5.xl-6
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
-            div(style="background: lightsteelblue; height: 40px")
+            .SnGrid.s-2.m-3.l-4.lg-5.xl-6
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
+                div(style="background: lightsteelblue; height: 40px")
         pre.language-html
-            //- code= ''
+            code= '<div class="SnGrid s-2 m-3 l-4 lg-5 xl-6">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'

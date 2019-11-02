@@ -1,73 +1,89 @@
 extends ../../config/template
 append config
-  -title = "Tema personalizado"
-  -description = "Sedna allows you to customize our design vars css in order to meet the needs of UI diversity from business and brand, including primary color, border radius, border color, etc."
-  -ogUrl = "/docs/theme.html"
-  -template = 2
-  
+    -title = "Tema personalizado"
+    -description = "Sedna allows you to customize our design vars css in order to meet the needs of UI diversity from business and brand, including primary color, border radius, border color, etc."
+    -ogUrl = "/docs/theme.html"
+    -template = 2
+
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Variables CSS.
-        p.SnCard-description 
+    section.SnMb-16
+        h2 Variables CSS.
+        p 
         .DocExample
-          .SnAvatar
+            .SnAvatar
         pre.language-scss
             code.
-              :root{
-                --snColor1: #9A40D6;
-                --snColor1Inverse: #FFFFFF;
-                --snColor1Light: #b358f0;
-                --snColor1Dark: #8c30c9;
-                
-                --snColor2: #faad14;
-                --snColor2Inverse: #FFFFFF;
+                :root{
+                    --snColor1Lighter: #69C0FF;
+                    --snColor1Light: #40A9FF;
+                    --snColor1: #1890FF;
+                    --snColor1Dark: #096DD9;
+                    --snColor1Darker: #0050B3;
+                    --snColor1Inverse: #FFFFFF;
 
-                --snError: #D73553;
-                --snSuccess: #31B243;
-                --snWarning: #FFC200;
-                --snDisable: #d9d9d9;
+                    // second color
+                    --snColor2Lighter: #ffd685;
+                    --snColor2Light: #ffc757;
+                    --snColor2: #faad14;
+                    --snColor2Dark: #ffa600;
+                    --snColor2Darker: #eb9c00;
+                    --snColor2Inverse: #FFFFFF;
 
-                // Colores de fondo
-                --snColorBg: #FFFFFF;
-                --snColorBgAlt: #f5f5f5;
-                --snColorHover: #0000000d;
+                    // Colores que se usaran en los estados del calendario
+                    --snErrorLight: #FF4D4F;
+                    --snError: #F5222D;
+                    --snErrorDark: #CF1322;
+                    --snErrorInverse: white;
 
-                // Colores de texto
-                --snColorText: #333333;
-                --snColorTextAlt: rgb(202, 202, 202);
+                    --snSuccessLight: #73D13D;
+                    --snSuccess: #52C41A;
+                    --snSuccessDark: #389E0D;
+                    --snSuccessInverse: white;
 
-                // Color del borde de forma general
-                --snColorBorder: #DFE2E2;
+                    --snWarningLight: #FFEC3D;
+                    --snWarning: #FADB14;
+                    --snWarningDark: #D4B106;
+                    --snWarningInverse: #3d2501;
 
-                // Darck styles
-                --snColorDark: #2A3B47;
-                --snColorDarkAlt: hsl(208, 29%, 10%);
-                --snColorDarkInverse: #b6bcc0;
-              }
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Variables SCSS.
-        p.SnCard-description 
-        .DocExample
-          .SnAvatar
+                    // Colores de fondo
+                    --snColorBg: #EFF3F6;
+                    --snColorBgAlt: #ffffff;
+                    --snColorHover: #0000000d;
+
+                    // Colores de texto
+                    --snColorText: #262626;
+                    --snColorTextAlt: #595959;
+
+                    // Color del borde de forma general
+                    --snColorBorder: #DFE2E2;
+
+                    // Darck styles
+                    --snColorDarkSmoother: #4f7087;
+                    --snColorDarkSmooth: #3c5567;
+                    --snColorDark: #2a3b47;
+                    --snColorDarker: #22303a;
+                    --snColorDarkest: #1a252d;
+                    --snColorDarkInverse: #b6bcc0;
+
+                    //--snColorDarkAlt: #22303a; // deprecated next version
+                }
+    section.SnMb-16
+        h2 Variables SCSS.
+        p 
         pre.language-scss
-          code.
-            $max-width : 1200px !default;
-            $gap : .5rem * 4 !default;  // 2rem
-            $max-grid-columns : 12 !default;
+            code.
+                $max-width : 1200px !default;
+                $gap : .5rem * 4 !default;  // 2rem
+                $max-grid-columns : 12 !default;
 
-            $breakpoints : (
-                s : 0,
-                m : 640px,
-                l : 1024px,
-                lg : 1024px,
-                xl : 1440px
-            );
-            $sizes: map-keys($breakpoints);
+                $breakpoints : (
+                    s : 0,
+                    m : 640px,
+                    l : 1024px,
+                    lg : 1024px,
+                    xl : 1440px
+                );
+                $sizes: map-keys($breakpoints);
 
-            $cssCore: false !default;
-            $classPrefix: 'Sn' !default;
+                $cssCore: false !default;
+                $classPrefix: 'Sn' !default;

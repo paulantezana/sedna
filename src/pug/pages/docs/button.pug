@@ -1,80 +1,83 @@
 extends ../../config/template
 append config
-  -title = "Buttons"
-  -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-  -ogUrl = "/index.html"
-  -template = 2
+    -title = "Buttons"
+    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -ogUrl = "/index.html"
+    -template = 2
 block main
-  main
-    h1= title
-    p= description
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Basic
-        p.SnCard-description Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-          | un botón <code>Success</code>, un botón <code>Warning</code>,
-          | un botón <code>Error</code>, un botón <code>White</code> en sedna.
+    section.SnMb-16
+        h2 Basic
+        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
+            | un botón <code>Success</code>, un botón <code>Warning</code>,
+            | un botón <code>Error</code>, un botón <code>White</code> en sedna.
         .DocExample
-          .SnBtn Default
-          .SnBtn.primary Primary
-          .SnBtn.success Success
-          .SnBtn.warning Warning
-          .SnBtn.error Error
-          .SnBtn.white White
+            .SnBtn Default
+            .SnBtn.primary Primary
+            .SnBtn.success Success
+            .SnBtn.warning Warning
+            .SnBtn.error Error
+            .SnBtn.white White
         pre.language-html
             code= '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn error">Error</div> \n<div class="SnBtn white">White</div>'
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Size
-        p.SnCard-description.
+    section.SnMb-16
+        h2 Size
+        p.
             Sedna admite un tamaño de botón predeterminado, así como un tamaño grande y pequeño.
             Si se desea un botón grande o pequeño, establezca la clase de tamaño en grande o pequeño, 
             respectivamente. Omita la propiedad de tamaño para un botón con el tamaño predeterminado.
         .DocExample
-          .SnBtn.sm Small
-          .SnBtn Default
-          .SnBtn.lg Large
+            .SnBtn.sm Small
+            .SnBtn Default
+            .SnBtn.lg Large
         pre.language-html
             code= '<div class="SnBtn sm">Small</div>' + ' \n<div class="SnBtn">Default</div> \n<div class="SnBtn lg">Large</div>'
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Block
-        p.SnCard-description La clase de <code>block</code> hará que el botón se ajuste a su ancho principal.
+    section.SnMb-16
+        h2 Block
+        p La clase de <code>block</code> hará que el botón se ajuste a su ancho principal.
         .DocExample
-          .SnBtn.block block
-          .SnBtn.block.primary block
-          .SnBtn.block.success block
+            .SnBtn.block block
+            .SnBtn.block.primary block
+            .SnBtn.block.success block
         pre.language-html
             code= '<div class="SnBtn block">Default</div>' + ' \n<div class="SnBtn primary block">Primary</div> \n<div class="SnBtn success block">Success</div>'
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Loading
-        p.SnCard-description Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-          //- | un botón <code>Success</code>, un botón <code>Warning</code>,
-          //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
+    section.SnMb-16
+        h2 Loading
+        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
+            //- | un botón <code>Success</code>, un botón <code>Warning</code>,
+            //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
         .DocExample
-          .SnBtn.loading Default
-          .SnBtn.primary.loading Primary
-          .SnBtn.success.loading Success
-          .SnBtn.warning.loading Warning
-          .SnBtn.error.loading Error
-          .SnBtn.white.loading White
-          .SnBtn.primary.loading(disabled) White
+            .SnBtn.loading Default
+            .SnBtn.primary.loading Primary
+            .SnBtn.success.loading Success
+            .SnBtn.warning.loading Warning
+            .SnBtn.error.loading Error
+            .SnBtn.white.loading White
+            .SnBtn.primary.loading(disabled) White
         pre.language-html
             code= '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn error loading">Error</div> \n<div class="SnBtn white loading">White</div>'
-    .SnCard.SnMb-16
-      section.SnCard-body
-        h2.SnCard-title Disabled
-        p.SnCard-description Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-          //- | un botón <code>Success</code>, un botón <code>Warning</code>,
-          //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
+    section.SnMb-16
+        h2 Disabled
+        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
+            //- | un botón <code>Success</code>, un botón <code>Warning</code>,
+            //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
         .DocExample
-          .SnBtn(disabled).loading Default
-          .SnBtn.primary(disabled).loading Primary
-          .SnBtn.success(disabled).loading Success
-          .SnBtn.warning(disabled).loading Warning
-          .SnBtn.error(disabled).loading Error
-          .SnBtn.white(disabled).loading White
-          .SnBtn.primary(disabled).loading White
+            .SnBtn(disabled).loading Default
+            .SnBtn.primary(disabled).loading Primary
+            .SnBtn.success(disabled).loading Success
+            .SnBtn.warning(disabled).loading Warning
+            .SnBtn.error(disabled).loading Error
+            .SnBtn.white(disabled).loading White
+            .SnBtn.primary(disabled).loading White
         pre.language-html
-            code= '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn error loading">Error</div> \n<div class="SnBtn white loading">White</div>'
+            code= '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn error loading" disabled>Error</div> \n<div class="SnBtn white loading" disabled>White</div>'
+    section.SnMb-16
+        h2 Group
+        //- p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
+        //- | un botón <code>Success</code>, un botón <code>Warning</code>,
+        //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
+        .DocExample
+            .SnBtn-group
+                .SnBtn.loading Default
+                .SnBtn.primary.loading Primary
+        pre.language-html
+            code= '<div class="SnBtn-group">\n    <div class="SnBtn loading">Default</div>\n    <div class="SnBtn primary loading">Primary</div>\n</div>'

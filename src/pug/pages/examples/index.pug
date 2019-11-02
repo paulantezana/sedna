@@ -1,0 +1,21 @@
+extends ../../config/template
+append config
+    -title = "Examples"
+    -description = "Examples."
+    -ogUrl = "/index.html"
+    -template = 1
+
+block main
+    .SnContainer
+        section.SnMb-16
+            h1= title
+            p= description
+            .SnGrid.m-2.l-3.lg-4
+                .SnCard
+                    .SnCard-body
+                .SnCard
+                    .SnCard-body
+                .SnCard
+                    .SnCard-body
+                .SnCard
+                    .SnCard-body
