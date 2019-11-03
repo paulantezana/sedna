@@ -8,8 +8,7 @@ SnMenu({
     menuId: 'PrimaryMenu',
     toggleButtonID: 'PrimaryMenu-toggle',
     toggleClass: 'PrimaryMenu-is-show',
-    parentClose: false,
-    menuCloseID: 'PrimaryMenu-close',
+    menuCloseID: 'PrimaryMenu-wrapper',
 });
 
 // Aside menu
@@ -17,7 +16,6 @@ SnMenu({
     menuId: 'AsideMenu',
     toggleButtonID: 'AsideMenu-toggle',
     toggleClass: 'AsideMenu-is-show',
-    parentClose: true,
     menuCloseID: 'AsideMenu-close',
 });
 

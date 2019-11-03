@@ -1,129 +1,128 @@
 // Estilos generales
 .PrimaryMenu {
-    @extend %snList;
-    a {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-        text-decoration: none;
-        // line-height: 32px;
-        // height: 32px;
-        display: block;
-        padding: 0 12px;
-        &.is-toggle {
-            display: flex;
-            justify-content: space-between;
-            padding-right: 0;
-        }
-        [class*="icon-"]:before{
-            position: relative;
-            top: 2px;
-        }
+  @extend %snList;
+  a {
+    font-family: "Open Sans", sans-serif;
+    display: block;
+    padding: 0 12px;
+    line-height: 2.25rem;
+    height: 2.25rem;
+    &.is-toggle {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0;
     }
+    [class*="icon-"]:before{
+        position: relative;
+        top: 2px;
+    }
+  }
 }
 
 // Estilos en el menu mobile
 .PrimaryMenu {
-    @include to(l) {
-        &-content {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: 999;
-            left: -100%;
-            top: 0;
-            background: var(--snColorBgAlt);
-            transition: left .4s;
-            width: 80vw;
-            padding: 1rem 0;
-            border-right: 1px solid var(--snColorBorder);
-        }
-        a {
-            color: var(--snColorText);
-            // border-radius: 32px;
-            padding: 0 12px;
-            &:hover{
-                background: var(--snColorHover);
-            }
-        }
+  @include to(l) {
+    &-wrapper {
+      background: rgba(black, 0.5);
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      left: -100vw;
+      top: 0;
     }
+    &-content {
+      width: 220px;
+      background: var(--snColorBg);
+      height: 100vh;
+    }
+    a {
+      color: var(--snColorText);
+      padding: 0 12px;
+      &:hover {
+        background: var(--snColorHover);
+      }
+    }
+  }
 }
 
 // Cuando se a
 .PrimaryMenu-is-show {
-    .PrimaryMenu-content {
-        left: 0;
-    }
+  .PrimaryMenu-wrapper {
+    left: 0;
+  }
 }
-
-// #PrimaryMenu-close {
-//     padding-top: 64px;
-//     display: flex;
-//     justify-content: center;
-//     font-size: 32px;
-//     // color: $menu-mobile-color;
-//     margin-bottom: 16px;
-//     cursor: pointer;
-//     @include from(l) {
-//         display: none;
-//     }
-// }
 
 // Estilos en el escritorio
 .PrimaryMenu {
-    @include from(l) {
-        &-content{
-            display: flex;
-            align-items: center;
-        }
-        display: flex;
-        a {
-            line-height: $headerHeight;
-            display: block;
-            color: var(--snColorText);
-            &:hover{
-                color: var(--snColor1);
-            }
-        }
-        li{
-            &.is-active{
-                position: relative;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 14px;
-                    height: 5px;
-                    border-bottom: 5px solid var(--snColor1);
-                    border-right: 7px solid transparent;
-                    border-left: 7px solid transparent;
-                }
-                a{
-                    font-weight: bold;
-                    color: var(--snColor1);
-                }
-            }
-            ul{
-                background: var(--snColorBgAlt);
-                box-shadow: 0 2px 16px -2px rgba(#000000, 0.10);
-                border-radius: 0.25rem;
-                min-width: 150px;
-                a {
-                    &:hover{
-                        background: var(--snColorHover);
-                    }
-                }
-            }
-        }
+  @include from(l) {
+    &-content {
+      display: flex;
+      align-items: center;
     }
+
+    // Active
+    li.is-active {
+      & > a {
+        // font-weight: bold;
+        color: var(--snColor1);
+      }
+    }
+
+    // Level 1
+    & > li {
+      & > a {
+        line-height: $headerHeight;
+        height: $headerHeight;
+        &:hover {
+          color: var(--snColor1);
+        }
+      }
+      &.is-active {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 14px;
+          height: 5px;
+          border-bottom: 5px solid var(--snColor1);
+          border-right: 7px solid transparent;
+          border-left: 7px solid transparent;
+        }
+      }
+    }
+
+    // Sub menu
+    li ul {
+      background: var(--snColorBgAlt);
+      min-width: 230px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      right: 0;
+
+      border-top: 2px solid var(--snColor1);
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      box-shadow: 0 8px 20px rgba(55, 125, 255, 0.075);
+
+      a {
+        &:hover {
+          background: var(--snColorHover);
+          color: var(--snColor1);
+        }
+      }
+    }
+  }
 }
 
 // Primary Menu - toggle
 #PrimaryMenu-toggle {
-    font-size: 1.4rem;
-    cursor: pointer;
-    @include from(l){
-        display: none;
-    }
+  font-size: 1.4rem;
+  cursor: pointer;
+  @include from(l) {
+    display: none;
+  }
 }

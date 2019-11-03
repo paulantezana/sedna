@@ -39,7 +39,8 @@ html(lang="es")
                 include ../includes/header
             .Site-main
                 if template === 1
-                    block main
+                    main
+                        block main
                 else if template === 2
                     main
                         .Main.SnContainer
@@ -52,9 +53,18 @@ html(lang="es")
                                         h1.SiteTitle-title= title
                                         p.SiteTitle-description= description
                                 block main
-                else if template === 1
+                else if template === 3
                     main
-                        block main
+                        .Main.SnContainer
+                            .Main-sidebar
+                                include ../includes/uiMenu
+                            .Main-content
+                                .SiteTitle
+                                    //- img.SiteTitle-bg(src="/assets/images/banner-bg.jpg" alt="")
+                                    .SiteTitle-content
+                                        h1.SiteTitle-title= title
+                                        p.SiteTitle-description= description
+                                block main
                 else
             .Site-footer
                 include ../includes/footer

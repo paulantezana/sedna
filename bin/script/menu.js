@@ -3,11 +3,10 @@
         if (links) {
             links.map(link => {
                 const url = document.location.href;
-                if (link.href === url || link.href === url.slice(0, -1))
+                if (url.indexOf(link.href) != -1)
                     link.parentNode.classList.add('is-active');
             });
         }
-        // match(/^\/tutorial/)
         return links;
     };
 
@@ -16,80 +15,101 @@
         toggleButtonID = "Menu-toggle",
         contextId = "Site",
         toggleClass = "Menu-is-show",
-        parentClose = false,
         menuCloseID = '',
-        wrapperId = '',
     }) => {
-        // Get Menu
-        let menuEl = document.getElementById(menuId);
-        if (!menuEl) return menuEl;
 
-        // Sub menus dinamicos
-        let items = menuEl.querySelectorAll("li"); // select all items
-        for (let ele of items) {
-            if (ele.childElementCount === 2) {
-                // if submenu
-                let toggle = ele.firstElementChild; // First Element
-                let content = ele.lastElementChild; // Second Element
+        let SnMenuApi = {
+            menu: null,
+            context: null,
+            toggleAction: null,
+            closeAction: null,
+            init() {
+                this.menu = document.getElementById(menuId);
+                if (!this.menu) {
+                    console.warn(`Not found ${menuId}`);
+                    return;
+                }
 
-                // Creando un nuevo elemento e insertando justo despues del enlace
-                let iconToggleEle = document.createElement("i");
-                iconToggleEle.classList.add("icon-down");
-                iconToggleEle.classList.add("toggle");
-                toggle.appendChild(iconToggleEle);
-                toggle.classList.add('is-toggle')
+                // Get all sub menu
+                let items = this.menu.querySelectorAll("li"); // select all items
+                for (let ele of items) {
+                    if (ele.childElementCount === 2) { // if submenu
+                        let toggle = ele.firstElementChild; // First element
+                        let content = ele.lastElementChild; // Second element
 
-                // Escuchando los eventos click
-                iconToggleEle.addEventListener("click", e => {
-                    e.preventDefault();
-                    iconToggleEle.classList.toggle("icon-up"); // add Icon up
-                    content.classList.toggle("is-show"); // add class show menu
-                });
+                        // Creando un nuevo elemento e insertando justo despues del enlace
+                        let iconToggleEle = document.createElement("i");
+                        iconToggleEle.classList.add("icon-down");
+                        iconToggleEle.classList.add("toggle");
+                        toggle.appendChild(iconToggleEle);
+                        toggle.classList.add('is-toggle')
+
+                        iconToggleEle.addEventListener("click", e => {
+                            e.preventDefault();
+                            iconToggleEle.classList.toggle("icon-up"); // add Icon up
+                            content.classList.toggle("is-show"); // add class show menu
+                        });
+                    }
+                }
+
+                // get context
+                this.context = document.getElementById(contextId);
+
+                // Toggle menu
+                this.toggleAction = document.getElementById(toggleButtonID);
+                if (this.toggleAction) {
+                    this.toggleAction.addEventListener("click", () => {
+                        this.toggle();
+                    });
+                }
+
+                // Menu close remove class
+                if (menuCloseID !== '') {
+                    this.closeAction = document.getElementById(menuCloseID);
+                    if (this.closeAction) {
+                        this.closeAction.addEventListener("click", () => {
+                            this.close();
+                        });
+
+                        // Set stop propagation
+                        if (this.closeAction.hasChildNodes()) {
+                            [...this.closeAction.children].forEach(item => {
+                                item.addEventListener('click', e => {
+                                    e.stopPropagation();
+                                });
+                            });
+                        }
+
+                        // Set Stop propagation
+                        this.menu.addEventListener('click', e => {
+                            e.stopPropagation();
+                        });
+                    }
+                }
+
+                // actives
+                this.setActive();
+            },
+            open() {
+                if (this.context)
+                    this.context.classList.add(toggleClass);
+            },
+            close() {
+                if (this.context)
+                    this.context.classList.remove(toggleClass);
+            },
+            toggle() {
+                if (this.context)
+                    this.context.classList.toggle(toggleClass);
+            },
+            setActive() {
+                if (this.menu)
+                    SnActiveMenu([...this.menu.querySelectorAll('a')]);
             }
         }
 
-        // Agregar la clase active en los enlaces
-        SnActiveMenu([...menuEl.querySelectorAll('a')]);
-
-        // Toggle Menu
-        let button = document.getElementById(toggleButtonID);
-        let context = document.getElementById(contextId);
-        if (button && context) {
-            button.addEventListener("click", () => {
-                context.classList.toggle(toggleClass);
-            });
-        }
-
-        // Menu close quitar la clase
-        if (menuCloseID !== '') {
-            let menuClose = document.getElementById(menuCloseID);
-            if (menuClose) {
-                menuClose.addEventListener("click", () => {
-                    context.classList.remove(toggleClass);
-                });
-            }
-        }
-
-        // Menu close quitar la clase
-        if (wrapperId !== '') {
-            let wrapper = document.getElementById(wrapperId);
-            if (wrapper) {
-                wrapper.addEventListener("click", () => {
-                    context.classList.remove(toggleClass);
-                });
-            }
-        }
-
-        // Hide menu by parent
-        if (parentClose) {
-            menuEl.parentNode.addEventListener("click", e => {
-                context.classList.remove(toggleClass);
-            });
-            menuEl.addEventListener('click', e => {
-                e.stopPropagation();
-            })
-        }
-        return menuEl;
+        SnMenuApi.init();
+        return SnMenuApi;
     };
 
     window.SnActiveMenu = SnActiveMenu;

@@ -7,7 +7,7 @@
         color: var(--snColorText);
         &.hoverable{
             &:hover{
-                box-shadow: 0 0.5rem 1rem -0.5rem #CCC;
+                box-shadow: 0 0.5rem 1rem -0.5rem var(--snColorBorder);
             }
         }
         &-header {
@@ -18,10 +18,13 @@
         &-cover{
     
         }
+        &-title{
+            font-size: 1rem;
+        }
         &-title,
         &-description{
             margin-top: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
         }
         &-body{
             padding: 1rem;

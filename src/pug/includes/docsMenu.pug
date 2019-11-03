@@ -1,45 +1,46 @@
+- let parentPath = 'documentation'
 -
   let sidebarGeneral = {
-    'Starter': '/docs/starter.html',
-    'Button': '/docs/button.html',
-    'Icon': '/docs/icon.html',
-    'Theme': '/docs/theme.html',
+    'Starter': `/${parentPath}/starter.html`,
+    'Button': `/${parentPath}/button.html`,
+    'Icon': `/${parentPath}/icon.html`,
+    'Theme': `/${parentPath}/theme.html`,
   }
 
 -
   let sidebarLayout = {
-    'Grid': '/docs/grid.html',
-    'Contain': '/docs/contain.html',
-    'Margin': '/docs/margin.html',
-    'Media Query': '/docs/mediaQuery.html',
+    'Grid': `/${parentPath}/grid.html`,
+    'Contain': `/${parentPath}/contain.html`,
+    'Margin': `/${parentPath}/margin.html`,
+    'Media Query': `/${parentPath}/mediaQuery.html`,
   }
 
 -
   let sidebarNavigation = {
-    'Menu': '/docs/menu.html',
-    'Pagination': '/docs/pagination.html',
+    'Menu': `/${parentPath}/menu.html`,
+    'Pagination': `/${parentPath}/pagination.html`,
   }
 
 -
   let sidebarEntry = {
-    'Form': '/docs/form.html',
+    'Form': `/${parentPath}/form.html`,
   }
 
 -
   let sidebarDisplay = {
-    'Avatar': '/docs/avatar.html',
-    'Card': '/docs/card.html',
-    'List': '/docs/list.html',
-    'Table': '/docs/table.html',
-    'Video': '/docs/video.html'
+    'Avatar': `/${parentPath}/avatar.html`,
+    'Card': `/${parentPath}/card.html`,
+    'List': `/${parentPath}/list.html`,
+    'Table': `/${parentPath}/table.html`,
+    'Video': `/${parentPath}/video.html`,
   }
 
 -
   let sidebarFeedback = {
-    'Modal': '/docs/modal.html',
-    'Alert': '/docs/alert.html',
-    'Message': '/docs/message.html',
-    'Freeze': '/docs/freeze.html',
+    'Modal': `/${parentPath}/modal.html`,
+    'Alert': `/${parentPath}/alert.html`,
+    'Message': `/${parentPath}/message.html`,
+    'Freeze': `/${parentPath}/freeze.html`,
   }
 
 
@@ -50,24 +51,24 @@ aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complem
       li.AsideMenu-header General
       each val, key in sidebarGeneral
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key
       li.AsideMenu-header Layout
       each val, key in sidebarLayout
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key
       li.AsideMenu-header Navigation
       each val, key in sidebarNavigation
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key
       li.AsideMenu-header Entry
       each val, key in sidebarEntry
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key
       li.AsideMenu-header Display
       each val, key in sidebarDisplay
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key
       li.AsideMenu-header Feedback
       each val, key in sidebarFeedback
         li.AsideMenu-item(itemprop="url")
-          a(href=val itemprop="name" title= "Enlace de " + key)= key
+          a(href=val itemprop="name" title= "Link to " + key)= key

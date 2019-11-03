@@ -1,6 +1,60 @@
-.DocExample{
-    & > * {
-        margin-right: 8px;
-        margin-bottom: 12px;
+.DocExample {
+  & > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }
+
+  #TopMenuDemo-context {
+    height: 400px;
+    border: 1px solid var(--snColorBorder);
+  }
+
+  .TopMenuDemo {
+    a {
+      padding: 0 12px;
+      line-height: 2.25rem;
+      &:hover {
+        background: var(--snColorHover);
+        color: var(--snColor1);
+      }
     }
+  }
+
+  .TopMenuDemo {
+    @include to(l) {
+      &-wrapper {
+        background: rgba(black, 0.5);
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        left: -100vw;
+        top: 0;
+      }
+      width: 220px;
+      background: var(--snColorBg);
+      height: 100vh;
+    }
+  }
+
+  .TopMenuDemo-is-show {
+    .TopMenuDemo-wrapper {
+      left: 0;
+    }
+  }
+
+  .TopMenuDemo {
+    @include from(l) {
+      li ul {
+        min-width: 200px;
+        border: 1px solid var(--snColorBorder);
+      }
+    }
+  }
+
+  #TopMenuDemo-toggle {
+    @include from(l) {
+      display: none;
+    }
+  }
 }

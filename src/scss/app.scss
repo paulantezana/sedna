@@ -27,7 +27,11 @@
 @import "Main";
 @import "AsideMenu";
 @import "Docs";
-@import "HomeBanner";
+
+@import "Home/HomeBanner";
+@import "Home/HomeIntro";
+@import "Home/HomeSocial";
+
 @import "SiteTitle";
 
 .SnRadio {

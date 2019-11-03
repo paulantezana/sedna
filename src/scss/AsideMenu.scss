@@ -1,25 +1,50 @@
 $asideMenuWidth: 220px;
 .AsideMenu{
     @extend %snList;
-    li.is-active{
-        a {
-            background: var(--snColorHover);
-            // color: var(--snColor1Inverse);
-            // border-right: 2px solid var(--snColor1);
-        }
-    }
     &-header{
         font-weight: 500;
         padding: 8px 0;
         color: var(--snColorTextAlt);
     }
     &-item{
+        padding-left: 8px;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--snColorBorder);
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 13px;
+            height: 1px;
+            background: var(--snColorBorder);    
+        }
         a{
             display: block;
-            padding: 8px 1rem;
+            padding: 8px 0 8px 1.4rem;
             color: var(--snColorText);
-            &:hover{
-                background: var(--snColorHover);
+        }
+        &:hover{
+            background: var(--snColorHover);
+        }
+        &.is-active{
+            &::after,
+            &::before{
+                background: var(--snColor1); 
+            }
+            a {
+                // background: var(--snColorHover);
+                color: var(--snColor1);
+                // border-left: 2px solid var(--snColor1);
             }
         }
     }
