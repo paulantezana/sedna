@@ -15,7 +15,15 @@
     padding-bottom: 24px;
     &-sidebar{
         @include from(l){
+            // padding: 1rem;
+            // background: var(--snColorBgAlt);
             border-right: 1px solid var(--snColorBorder);
+        }
+    }
+    &-content{
+        @include from(l){
+            // padding: 1rem;
+            // background: var(--snColorBgAlt);
         }
     }
 }

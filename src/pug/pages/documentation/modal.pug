@@ -6,10 +6,12 @@ append config
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        p Basic modal.
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            'Basic modal.', 
+            '<div class="SnBtn primary" data-modaltrigger="demo">Open Modal</div>\n<div class="SnModal-wrapper" data-modal="demo">\n    <div class="SnModal">\n        <div class="SnModal-close" data-modalclose="demo"><svg viewBox="64 64 896 896" class=""\n                data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">\n                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">\n                </path>\n            </svg></div>\n        <div class="SnModal-header">Imprimir</div>\n        <div class="SnModal-body">\n            <p>modal content ...</p>\n            <div class="SnBtn primary" data-modaltrigger="innerModal">Inner Open Modal</div>\n        </div>\n    </div>\n</div>\n<div class="SnModal-wrapper" data-modal="innerModal">\n    <div class="SnModal">\n        <div class="SnModal-close" data-modalclose="innerModal"><svg viewBox="64 64 896 896"\n                class="" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true"\n                focusable="false">\n                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">\n                </path>\n            </svg></div>\n        <div class="SnModal-header">Imprimir</div>\n        <div class="SnModal-body">\n            <p>modal content ...</p>\n        </div>\n    </div>\n</div>'
+        )
             .SnBtn.primary(data-modaltrigger="demo") Open Modal
             .SnModal-wrapper(data-modal="demo")
                 .SnModal
@@ -27,138 +29,151 @@ block main
                     .SnModal-header Imprimir
                     .SnModal-body
                         p modal content ...
-        pre.language-html
-            code= '<div class="SnBtn primary" data-modaltrigger="demo">Open Modal</div>\n<div class="SnModal-wrapper" data-modal="demo">\n    <div class="SnModal">\n        <div class="SnModal-close" data-modalclose="demo"><svg viewBox="64 64 896 896" class=""\n                data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false">\n                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">\n                </path>\n            </svg></div>\n        <div class="SnModal-header">Imprimir</div>\n        <div class="SnModal-body">\n            <p>modal content ...</p>\n            <div class="SnBtn primary" data-modaltrigger="innerModal">Inner Open Modal</div>\n        </div>\n    </div>\n</div>\n<div class="SnModal-wrapper" data-modal="innerModal">\n    <div class="SnModal">\n        <div class="SnModal-close" data-modalclose="innerModal"><svg viewBox="64 64 896 896"\n                class="" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true"\n                focusable="false">\n                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">\n                </path>\n            </svg></div>\n        <div class="SnModal-header">Imprimir</div>\n        <div class="SnModal-body">\n            <p>modal content ...</p>\n        </div>\n    </div>\n</div>'
-    section.SnMb-16
-        h2 Confirmation modal dialog
-        p Use confirm() to show a confirmation modal dialog.
-        .DocExample
-            .SnBtn(onclick="onConfirmConfirm()") confirm
-            .SnBtn(onclick="onConfirmDelete()") delete
-        script.
-            let onConfirmConfirm = ()=>{
-                SnModal.confirm({
-                    title: 'Do you Want to delete these items?',
-                    content: 'Some descriptions',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                    onCancel() {
-                        console.log('onCancel')
-                    }
-                });
-            }
-            let onConfirmDelete = ()=>{
-                SnModal.confirm({
-                    title: 'Are you sure delete this task?',
-                    content: 'Some descriptions',
-                    okText: 'Yes',
-                    okType: 'error',
-                    cancelText: 'No',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                    onCancel() {
-                        console.log('onCancel')
-                    }
-                });
-            }
-        pre.language-js
-            code.
-                SnModal.confirm({
-                    title: 'Do you Want to delete these items?',
-                    content: 'Some descriptions',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                    onCancel() {
-                        console.log('onCancel')
-                    }
-                });
 
-                SnModal.confirm({
-                    title: 'Are you sure delete this task?',
-                    content: 'Some descriptions',
-                    okText: 'Yes',
-                    okType: 'error',
-                    cancelText: 'No',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                    onCancel() {
-                        console.log('onCancel')
+
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn(onclick="onConfirmConfirm()") confirm
+                .SnBtn(onclick="onConfirmDelete()") delete
+            .CodeBox-meta
+                .CodeBox-title Confirmation modal dialog
+                .CodeBox-description Use confirm() to show a confirmation modal dialog.
+                .CodeBox-actions
+                    //- a(href="#" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                script.
+                    let onConfirmConfirm = ()=>{
+                        SnModal.confirm({
+                            title: 'Do you Want to delete these items?',
+                            content: 'Some descriptions',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                            onCancel() {
+                                console.log('onCancel')
+                            }
+                        });
                     }
-                });
-    section.SnMb-16
-        h2 Information modal dialog
-        p In the various types of information modal dialog, only one button to close dialog is provided.
-        .DocExample
-            .SnBtn(onclick="onConfirmInfo()") info
-            .SnBtn(onclick="onConfirmSuccess()") success
-            .SnBtn(onclick="onConfirmError()") error
-            .SnBtn(onclick="onConfirmWarning()") warning
-        script.
-            let onConfirmInfo = ()=>{
-                SnModal.info({
-                    title: 'This is a notification message',
-                    content: 'some messages...some messages... \n some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-            }
-            let onConfirmSuccess = ()=>{
-                SnModal.success({
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-            }
-            let onConfirmError = ()=>{
-                SnModal.error({
-                    title: 'This is an error message',
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-            }
-            let onConfirmWarning = ()=>{
-                SnModal.warning({
-                    title: 'This is a warning message',
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-            }
-        pre.language-js
-            code.
-                SnModal.info({
-                    title: 'This is a notification message',
-                    content: 'some messages...some messages... \n some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-                SnModal.success({
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-                SnModal.error({
-                    title: 'This is an error message',
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
-                SnModal.warning({
-                    title: 'This is a warning message',
-                    content: 'some messages...some messages...',
-                    onOk() {
-                        console.log('onOk')
-                    },
-                });
+                    let onConfirmDelete = ()=>{
+                        SnModal.confirm({
+                            title: 'Are you sure delete this task?',
+                            content: 'Some descriptions',
+                            okText: 'Yes',
+                            okType: 'error',
+                            cancelText: 'No',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                            onCancel() {
+                                console.log('onCancel')
+                            }
+                        });
+                    }
+                pre.language-js
+                    code.
+                        SnModal.confirm({
+                            title: 'Do you Want to delete these items?',
+                            content: 'Some descriptions',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                            onCancel() {
+                                console.log('onCancel')
+                            }
+                        });
+
+                        SnModal.confirm({
+                            title: 'Are you sure delete this task?',
+                            content: 'Some descriptions',
+                            okText: 'Yes',
+                            okType: 'error',
+                            cancelText: 'No',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                            onCancel() {
+                                console.log('onCancel')
+                            }
+                        });
+
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn(onclick="onConfirmInfo()") info
+                .SnBtn(onclick="onConfirmSuccess()") success
+                .SnBtn(onclick="onConfirmError()") error
+                .SnBtn(onclick="onConfirmWarning()") warning
+            .CodeBox-meta
+                .CodeBox-title Information modal dialog
+                .CodeBox-description In the various types of information modal dialog, only one button to close dialog is provided.
+                .CodeBox-actions
+                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                script.
+                    let onConfirmInfo = ()=>{
+                        SnModal.info({
+                            title: 'This is a notification message',
+                            content: 'some messages...some messages... \n some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                    }
+                    let onConfirmSuccess = ()=>{
+                        SnModal.success({
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                    }
+                    let onConfirmError = ()=>{
+                        SnModal.error({
+                            title: 'This is an error message',
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                    }
+                    let onConfirmWarning = ()=>{
+                        SnModal.warning({
+                            title: 'This is a warning message',
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                    }
+                pre.language-js
+                    code.
+                        SnModal.info({
+                            title: 'This is a notification message',
+                            content: 'some messages...some messages... \n some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                        SnModal.success({
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                        SnModal.error({
+                            title: 'This is an error message',
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });
+                        SnModal.warning({
+                            title: 'This is a warning message',
+                            content: 'some messages...some messages...',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                        });

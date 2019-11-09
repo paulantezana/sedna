@@ -5,13 +5,21 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    section.SnMb-16
-        h2 Only SCSS
-        pre.language-scss
-            code.
-                @include from(l){
-                    // css styles
-                }
-                @include to(l){
-                    // css styles
-                }
+    section.CodeBox
+        .CodeBox-demo
+        .CodeBox-meta
+            .CodeBox-title Only SCSS
+            .CodeBox-description
+            .CodeBox-actions
+                //- a(href="#" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+        .CodeBox-code
+            pre.language-scss
+                code.
+                    @include from(l){
+                        // css styles
+                    }
+                    @include to(l){
+                        // css styles
+                    }

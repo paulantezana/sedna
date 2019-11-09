@@ -6,10 +6,8 @@ append config
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        p Simple table with actions.
-        .DocExample
+    section.CodeBox
+        .CodeBox-demo
             .SnTable-wrapper
                 table.SnTable
                     thead
@@ -59,22 +57,31 @@ block main
                         }
                     });
                 }
-        pre.language-html
-            code= '<div class="SnTable-wrapper">\n    <table class="SnTable">\n        <thead>\n            <tr>\n                <th>Column 1</th>\n                <th>Column 2</th>\n                <th>Column 3</th>\n                <th style="width: 100px"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>' 
-        pre.language-js
-            code.
-                let onConfirmDelete = ()=>{
-                    SnModal.confirm({
-                        title: 'Are you sure delete this task?',
-                        content: 'Some descriptions',
-                        okText: 'Yes',
-                        okType: 'error',
-                        cancelText: 'No',
-                        onOk() {
-                            console.log('onOk')
-                        },
-                        onCancel() {
-                            console.log('onCancel')
-                        }
-                    });
-                }
+        
+        .CodeBox-meta
+            .CodeBox-title Basic
+            .CodeBox-description Simple table with actions.
+            .CodeBox-actions
+                //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+        .CodeBox-code
+            pre.language-html
+                code= '<div class="SnTable-wrapper">\n    <table class="SnTable">\n        <thead>\n            <tr>\n                <th>Column 1</th>\n                <th>Column 2</th>\n                <th>Column 3</th>\n                <th style="width: 100px"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>' 
+            pre.language-js
+                code.
+                    let onConfirmDelete = ()=>{
+                        SnModal.confirm({
+                            title: 'Are you sure delete this task?',
+                            content: 'Some descriptions',
+                            okText: 'Yes',
+                            okType: 'error',
+                            cancelText: 'No',
+                            onOk() {
+                                console.log('onOk')
+                            },
+                            onCancel() {
+                                console.log('onCancel')
+                            }
+                        });
+                    }

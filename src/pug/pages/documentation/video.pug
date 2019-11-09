@@ -6,11 +6,11 @@ append config
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        p 
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            '', 
+            '<div class="SnVideo">\n    <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0"\n        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>\n</div>'
+        )
             .SnVideo
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        pre.language-html
-            code= '<div class="SnVideo">\n    <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0"\n        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>\n</div>'

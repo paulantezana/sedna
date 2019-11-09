@@ -5,17 +5,26 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    section.SnMb-16
-        h2 
-        .SnBtn.primary(onclick="startFreeze()") Freeze
-        script.
-            let startFreeze = () => {
-                SnFreeze.freeze();
-                setTimeout(() => {
-                    SnFreeze.unFreeze();
-                }, 2000);
-            }
-        pre.language-js
-            code.
-                SnFreeze.freze();
-                SnFreeze.unFreeze();
+    .SnGrid.l-2
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn.primary(onclick="startFreeze()") Freeze
+                script.
+                    let startFreeze = () => {
+                        SnFreeze.freeze();
+                        setTimeout(() => {
+                            SnFreeze.unFreeze();
+                        }, 2000);
+                    }
+            .CodeBox-meta
+                .CodeBox-title Freeze
+                .CodeBox-description Freeze.
+                .CodeBox-actions
+                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                pre.language-js
+                    code.
+                        SnFreeze.freze();
+                        SnFreeze.unFreeze();

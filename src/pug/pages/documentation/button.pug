@@ -5,47 +5,39 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    section.SnMb-16
-        h2 Basic
-        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-            | un botón <code>Success</code>, un botón <code>Warning</code>,
-            | un botón <code>Error</code>, un botón <code>White</code> en sedna.
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            'There are default button, primary button, success button, warning button, error button and white button in sedna', 
+            '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn error">Error</div> \n<div class="SnBtn white">White</div>'
+        )
             .SnBtn Default
             .SnBtn.primary Primary
             .SnBtn.success Success
             .SnBtn.warning Warning
             .SnBtn.error Error
             .SnBtn.white White
-        pre.language-html
-            code= '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn error">Error</div> \n<div class="SnBtn white">White</div>'
-    section.SnMb-16
-        h2 Size
-        p.
-            Sedna admite un tamaño de botón predeterminado, así como un tamaño grande y pequeño.
-            Si se desea un botón grande o pequeño, establezca la clase de tamaño en grande o pequeño, 
-            respectivamente. Omita la propiedad de tamaño para un botón con el tamaño predeterminado.
-        .DocExample
+        +codeBox(
+            'Size', 
+            'Sedna supports a default button size as well as a large and small size.', 
+            '<div class="SnBtn sm">Small</div>' + ' \n<div class="SnBtn">Default</div> \n<div class="SnBtn lg">Large</div>'
+        )
             .SnBtn.sm Small
             .SnBtn Default
             .SnBtn.lg Large
-        pre.language-html
-            code= '<div class="SnBtn sm">Small</div>' + ' \n<div class="SnBtn">Default</div> \n<div class="SnBtn lg">Large</div>'
-    section.SnMb-16
-        h2 Block
-        p La clase de <code>block</code> hará que el botón se ajuste a su ancho principal.
-        .DocExample
+        +codeBox(
+            'Block', 
+            'block class will make the button fit to its parent width.', 
+            '<div class="SnBtn block">Default</div>' + ' \n<div class="SnBtn primary block">Primary</div> \n<div class="SnBtn success block">Success</div>'
+        )
             .SnBtn.block block
             .SnBtn.block.primary block
             .SnBtn.block.success block
-        pre.language-html
-            code= '<div class="SnBtn block">Default</div>' + ' \n<div class="SnBtn primary block">Primary</div> \n<div class="SnBtn success block">Success</div>'
-    section.SnMb-16
-        h2 Loading
-        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-            //- | un botón <code>Success</code>, un botón <code>Warning</code>,
-            //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
-        .DocExample
+        +codeBox(
+            'Loading', 
+            'A loading indicator can be added to a button by setting the loading class on the Button.',
+            '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn error loading">Error</div> \n<div class="SnBtn white loading">White</div>'
+        )
             .SnBtn.loading Default
             .SnBtn.primary.loading Primary
             .SnBtn.success.loading Success
@@ -53,14 +45,11 @@ block main
             .SnBtn.error.loading Error
             .SnBtn.white.loading White
             .SnBtn.primary.loading(disabled) White
-        pre.language-html
-            code= '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn error loading">Error</div> \n<div class="SnBtn white loading">White</div>'
-    section.SnMb-16
-        h2 Disabled
-        p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-            //- | un botón <code>Success</code>, un botón <code>Warning</code>,
-            //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
-        .DocExample
+        +codeBox(
+            'Disabled', 
+            'To mark a button as disabled, add the disabled class to the Button.', 
+            '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn error loading" disabled>Error</div> \n<div class="SnBtn white loading" disabled>White</div>'
+        )
             .SnBtn(disabled).loading Default
             .SnBtn.primary(disabled).loading Primary
             .SnBtn.success(disabled).loading Success
@@ -68,16 +57,11 @@ block main
             .SnBtn.error(disabled).loading Error
             .SnBtn.white(disabled).loading White
             .SnBtn.primary(disabled).loading White
-        pre.language-html
-            code= '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn error loading" disabled>Error</div> \n<div class="SnBtn white loading" disabled>White</div>'
-    section.SnMb-16
-        h2 Group
-        //- p Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-        //- | un botón <code>Success</code>, un botón <code>Warning</code>,
-        //- | un botón <code>Error</code>, un botón <code>White</code> en sedna.
-        .DocExample
+        +codeBox(
+            'Group', 
+            'Buttons can be grouped by placing multiple Buttons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn loading">Default</div>\n    <div class="SnBtn primary loading">Primary</div>\n</div>'
+        )
             .SnBtn-group
                 .SnBtn.loading Default
                 .SnBtn.primary.loading Primary
-        pre.language-html
-            code= '<div class="SnBtn-group">\n    <div class="SnBtn loading">Default</div>\n    <div class="SnBtn primary loading">Primary</div>\n</div>'

@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 const fs = require('fs');
+require("babel-polyfill");
 
 const getFilesInFolder = (base = '.', scanSubDirectories = false, regularExpression = /\.js$/) => {
     const files = [];
@@ -44,7 +45,7 @@ pugPages = pugPages.map(item => {
 module.exports = {
     entry: {
         sedna: './src/sedna.js',
-        app: './src/app.js',
+        app: ['babel-polyfill','./src/app.js'],
     },
     output: {
         path: path.resolve(__dirname, "docs"),

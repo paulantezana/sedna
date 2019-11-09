@@ -6,16 +6,24 @@ append config
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        //- p.SnCard-description Hay un botón <code>Default</code>, un botón <code>Primary</code>, 
-        //-   | un botón <code>Success</code>, un botón <code>Warning</code>,
-        //-   | un botón <code>Error</code>, un botón <code>White</code> en sedna.
-        .DocExample
-            .SnAlert message in alert
-            .SnAlert.success message in alert
-            .SnAlert.info message in alert
-            .SnAlert.warning message in alert
-            .SnAlert.error message in alert
-        pre.language-html
-            code= '<div class="SnAlert">message in alert</div>' + ' \n<div class="SnAlert success">message in alert</div> \n<div class="SnAlert info">message in alert</div> \n<div class="SnAlert warning">message in alert</div> \n<div class="SnAlert error">message in alert</div>'
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            '', 
+            '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert error"> <span class="SnIcon-error"></span>message in alert</div>'
+        )
+            .SnAlert 
+                span.SnIcon-question
+                | message in alert
+            .SnAlert.success 
+                span.SnIcon-success
+                | message in alert
+            .SnAlert.info 
+                span.SnIcon-info
+                | message in alert
+            .SnAlert.warning 
+                span.SnIcon-warning
+                | message in alert
+            .SnAlert.error 
+                span.SnIcon-error
+                | message in alert

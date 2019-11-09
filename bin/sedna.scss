@@ -26,6 +26,8 @@
     @include SnVideo();
     @include SnSwitch();
     @include SnFreeze();
+    @include SnTab();
+    @include SnTooltip();
 
     // Leyout
     @include SnContainer();

@@ -1,19 +1,19 @@
 extends ../../config/template
 append config
-  -title = "List"
-  -description = "Simple List."
-  -ogUrl = "/index.html"
-  -template = 2
-  
+    -title = "List"
+    -description = "Simple List."
+    -ogUrl = "/index.html"
+    -template = 2
+
 block main
-      section.SnMb-16
-        h2 Basic
-        p Simple List.
-        .DocExample
-          ul.SnList
-            li item 1
-            li item 2
-            li item 3
-            li item 4
-        pre.language-html
-            code= '<ul class="SnList">\n    <li>item 1</li>\n    <li>item 2</li>\n    <li>item 3</li>\n    <li>item 4</li>\n</ul>'
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            'Simple List.', 
+            '<ul class="SnList">\n    <li>item 1</li>\n    <li>item 2</li>\n    <li>item 3</li>\n    <li>item 4</li>\n</ul>'
+        )
+            ul.SnList
+                li item 1
+                li item 2
+                li item 3
+                li item 4

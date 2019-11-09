@@ -1,36 +1,36 @@
 extends ../../config/template
 append config
     -title = "Grids"
-    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -description = "24 Grids System."
     -ogUrl = "/index.html"
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 3 cols
-        p
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            '3 cols', 
+            '', 
+            '<div class="SnGrid m-3">\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
+        )
             .SnGrid.m-3
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
-        pre.language-html
-            code= '<div class="SnGrid m-3">\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
-    section.SnMb-16
-        h2 4 cols
-        p
-        .DocExample
+        +codeBox(
+            '4 cols', 
+            '', 
+            '<div class="SnGrid m-4">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
+        )
             .SnGrid.m-4
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
-        pre.language-html
-            code= '<div class="SnGrid m-4">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
-    section.SnMb-16
-        h2 Responsive 1 - 12
-        p
-        .DocExample
+        +codeBox(
+            'Responsive 1 - 12', 
+            '',
+            '<div class="SnGrid s-2 m-3 l-4 lg-5 xl-6">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'
+        )
             .SnGrid.s-2.m-3.l-4.lg-5.xl-6
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
@@ -39,5 +39,3 @@ block main
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
                 div(style="background: lightsteelblue; height: 40px")
-        pre.language-html
-            code= '<div class="SnGrid s-2 m-3 l-4 lg-5 xl-6">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>'

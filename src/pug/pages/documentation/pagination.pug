@@ -6,16 +6,15 @@ append config
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        p Basic pagination.
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            'Basic pagination.', 
+            '<ul class="SnPagination">\n    <li class="SnPagination-item disabled"><a href="#" class="SnPagination-link">Previous</a></li>\n    <li class="SnPagination-item active"><a href="#" class="SnPagination-link">1</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">2</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">3</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">Next</a></li>\n</ul>'
+        )
             ul.SnPagination
                 li.SnPagination-item.disabled: a.SnPagination-link(href="#") Previous
                 li.SnPagination-item.active: a.SnPagination-link(href="#") 1
                 li.SnPagination-item: a.SnPagination-link(href="#") 2
                 li.SnPagination-item: a.SnPagination-link(href="#") 3
                 li.SnPagination-item: a.SnPagination-link(href="#") Next
-            
-        pre.language-html
-            code= '<ul class="SnPagination">\n    <li class="SnPagination-item disabled"><a href="#" class="SnPagination-link">Previous</a></li>\n    <li class="SnPagination-item active"><a href="#" class="SnPagination-link">1</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">2</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">3</a></li>\n    <li class="SnPagination-item "><a href="#" class="SnPagination-link">Next</a></li>\n</ul>' 

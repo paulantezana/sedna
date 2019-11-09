@@ -1,20 +1,20 @@
 extends ../../config/template
 append config
     -title = "Margin"
-    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -description = "Margin."
     -ogUrl = "/index.html"
     -template = 2
 
 block main
-    section.SnMb-16
-        h2 Basic
-        p
-        .DocExample
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            '', 
+            '<div class="SnMt-16">Margin top 16px ...</div>\n<div class="SnMb-16">Margin button 16px ...</div>\n<div class="SnMt-32">Margin top 32px ...</div>\n<div class="SnMb-32">Margin button 32px ...</div>\n<div class="SnMt-64">Margin top 64px ...</div>\n<div class="SnMb-64">Margin button 64px ...</div>'
+        )
             .SnMt-16 Margin top 16px ...
             .SnMb-16 Margin button 16px ...
             .SnMt-32 Margin top 32px ...
             .SnMb-32 Margin button 32px ...
             .SnMt-64 Margin top 64px ...
             .SnMb-64 Margin button 64px ...
-        pre.language-html
-            code= '<div class="SnMt-16">Margin top 16px ...</div>\n<div class="SnMb-16">Margin button 16px ...</div>\n<div class="SnMt-32">Margin top 32px ...</div>\n<div class="SnMb-32">Margin button 32px ...</div>\n<div class="SnMt-64">Margin top 64px ...</div>\n<div class="SnMb-64">Margin button 64px ...</div>'

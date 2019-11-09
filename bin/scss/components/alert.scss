@@ -7,6 +7,12 @@
         position: relative;
         padding: 8px 15px;
         border-radius: 4px;
+        
+        [class*='SnIcon-']{
+            margin-right: 8px;
+            position: relative;
+            top: 3px;
+        }
     
         &.success{
             background: var(--snSuccess);

@@ -1,6 +1,6 @@
 extends ../../config/template
 append config
-    -title = "Tema personalizado"
+    -title = "Customize Theme"
     -description = "Sedna allows you to customize our design vars css in order to meet the needs of UI diversity from business and brand, including primary color, border radius, border color, etc."
     -ogUrl = "/docs/theme.html"
     -template = 2
@@ -8,7 +8,7 @@ append config
 block main
     section.SnMb-16
         h2 Variables CSS.
-        p 
+        p There are some major variables below, all css variables could be found in default Variables
         .DocExample
             .SnAvatar
         pre.language-scss
@@ -21,7 +21,6 @@ block main
                     --snColor1Darker: #0050B3;
                     --snColor1Inverse: #FFFFFF;
 
-                    // second color
                     --snColor2Lighter: #ffd685;
                     --snColor2Light: #ffc757;
                     --snColor2: #faad14;
@@ -29,7 +28,6 @@ block main
                     --snColor2Darker: #eb9c00;
                     --snColor2Inverse: #FFFFFF;
 
-                    // Colores que se usaran en los estados del calendario
                     --snErrorLight: #FF4D4F;
                     --snError: #F5222D;
                     --snErrorDark: #CF1322;
@@ -45,31 +43,25 @@ block main
                     --snWarningDark: #D4B106;
                     --snWarningInverse: #3d2501;
 
-                    // Colores de fondo
                     --snColorBg: #EFF3F6;
                     --snColorBgAlt: #ffffff;
                     --snColorHover: #0000000d;
 
-                    // Colores de texto
                     --snColorText: #262626;
                     --snColorTextAlt: #595959;
 
-                    // Color del borde de forma general
                     --snColorBorder: #DFE2E2;
 
-                    // Darck styles
                     --snColorDarkSmoother: #4f7087;
                     --snColorDarkSmooth: #3c5567;
                     --snColorDark: #2a3b47;
                     --snColorDarker: #22303a;
                     --snColorDarkest: #1a252d;
                     --snColorDarkInverse: #b6bcc0;
-
-                    //--snColorDarkAlt: #22303a; // deprecated next version
                 }
     section.SnMb-16
         h2 Variables SCSS.
-        p 
+        p Scss vars
         pre.language-scss
             code.
                 $max-width : 1200px !default;

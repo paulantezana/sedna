@@ -16,3 +16,8 @@ h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+[class*="icon-"]::before{
+  position: relative;
+  top: 4px;
+}

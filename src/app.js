@@ -20,3 +20,31 @@ SnMenu({
 });
 
 new Theme();
+
+let codeBox = document.querySelectorAll('.CodeBox');
+if (codeBox) {
+    codeBox.forEach(item => {
+        let codeBoxShow = item.querySelector('.CodeBox-show');
+        let codeBoxCode = item.querySelector('.CodeBox-code');
+        let codeBoxCopy = item.querySelector('.CodeBox-copy');
+        if (codeBoxShow && codeBoxCode) {
+            codeBoxShow.addEventListener('click', () => {
+                codeBoxCode.classList.toggle('is-expand');
+            });
+
+            if (codeBoxCopy) {
+                codeBoxCopy.addEventListener('click', () => {
+                    let range = document.createRange();
+                    range.selectNode(codeBoxCode);
+                    window.getSelection().removeAllRanges();
+                    window.getSelection().addRange(range);
+                    document.execCommand("copy");
+                    window.getSelection().removeAllRanges();
+
+                    SnMessage.success({ content: 'copy success' });
+                });
+            }
+        }
+
+    });
+}

@@ -1,0 +1,35 @@
+extends ../../config/template
+append config
+    -title = "Tooltip"
+    -description = "A simple text popup tip."
+    -ogUrl = "/tooltip.html"
+    -template = 2
+
+block main
+    .SnGrid.l-2
+        +codeBox(
+            'Basic', 
+            'The simplest usage', 
+            '<p>\n    <span data-tooltip="prompt text">Tooltip will show on mouse enter</span>\n</p>'
+        )
+            p
+                span(data-tooltip="prompt text") Tooltip will show on mouse enter
+
+        +codeBox(
+            'Placement',
+            'There are 8 placement options available',
+            '<div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="left top">L T</div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="left center">L C</div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="left bottom">L B</div>\n</div>\n<div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="center top">C T</div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="center bottom">C B</div>\n</div>\n<div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="right top">R T</div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="right center">R C</div>\n    <div class="SnBtn block" data-tooltip="prompt text" data-position="right bottom">R B</div>\n</div>'
+        )
+            .SnGrid.s-3
+                div.Space
+                    .SnBtn.block(data-tooltip="prompt text" data-position="left top") L T
+                    .SnBtn.block(data-tooltip="prompt text" data-position="left center") L C
+                    .SnBtn.block(data-tooltip="prompt text" data-position="left bottom") L B
+                div.Space
+                    .SnBtn.block(data-tooltip="prompt text" data-position="center top") C T
+                    div(style="height: 2rem")
+                    .SnBtn.block(data-tooltip="prompt text" data-position="center bottom") C B
+                div.Space
+                    .SnBtn.block(data-tooltip="prompt text" data-position="right top") R T
+                    .SnBtn.block(data-tooltip="prompt text" data-position="right center") R C
+                    .SnBtn.block(data-tooltip="prompt text" data-position="right bottom") R B

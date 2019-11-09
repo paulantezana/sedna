@@ -5,5 +5,18 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    section.SnMb-16
-        h2 Basic
+    .SnGrid.l-2
+        +codeBox(
+            '3 cols', 
+            '', 
+            ''
+        )
+            .SnIcon-info
+            .SnIcon-question
+            .SnIcon-success
+            .SnIcon-warning
+            .SnIcon-error
+            style(type="text/css").
+                .CodeBox [class*="SnIcon-"] {
+                    font-size: 1.3rem;
+                }
