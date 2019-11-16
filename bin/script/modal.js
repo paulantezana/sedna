@@ -92,7 +92,7 @@
 
                 this.openModals.push(modal)
             } else {
-                console.warning('Could not find modal with name "%s"', modalName)
+                console.warn('Could not find modal with name "%s"', modalName)
             }
 
             typeof cb === 'function' && cb()
@@ -114,7 +114,7 @@
 
                 this.openModals.pop(modal)
             } else {
-                console.warning('Could not find modal with name "%s"', modalName)
+                console.warn('Could not find modal with name "%s"', modalName)
             }
 
             typeof cb === 'function' && cb()
