@@ -6,3 +6,4 @@ import './script/modal';
 import './script/tooltip';
 import './script/freeze';
 import './script/tab';
+import './script/collapse';

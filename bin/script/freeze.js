@@ -3,8 +3,9 @@
     SnFreezeGScope.classList.add('SnFreeze-wrapper');
 
     let SnFreeze = {
-        unFreeze(){
-            let element = document.querySelector('.SnFreeze-wrapper');
+        unFreeze(selector){
+            let parentSelector = document.querySelector(selector) || document;
+            let element = parentSelector.querySelector('.SnFreeze-wrapper');
             if (element) {
                 element.classList.add('is-unfreezing');
                 setTimeout(() => {
@@ -20,6 +21,7 @@
             SnFreezeGScope.setAttribute('data-text', options.text || 'Loading');
             if (document.querySelector(options.selector)) {
                 SnFreezeGScope.style.position = 'absolute';
+                parent.style.position = 'relative';
             }
             parent.appendChild(SnFreezeGScope);
         }
