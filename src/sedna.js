@@ -1,2 +1,2 @@
 import './sedna.scss';
-import './../bin/sedna';
+import './../bin/sedna-dist';

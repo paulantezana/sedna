@@ -11,18 +11,16 @@ import { SnTab } from './script/tab';
 import { SnTooltip } from './script/tooltip';
 import { SnTree } from './script/tree';
 
-export {
-    SnAutocomplete,
-    SnCollapse,
-    SnIcon,
-    SnInput,
-    SnFreeze,
-    SnMenu,
-    SnActiveMenu,
-    SnMessage,
-    SnModal,
-    SnVideoOverlay,
-    SnTab,
-    SnTooltip,
-    SnTree,
-};
+window.SnAutocomplete = SnAutocomplete;
+window.SnCollapse = SnCollapse;
+window.SnIcon = SnIcon;
+window.SnInput = SnInput;
+window.SnFreeze = SnFreeze;
+window.SnMenu = SnMenu;
+window.SnActiveMenu = SnActiveMenu;
+window.SnMessage = SnMessage;
+window.SnModal = SnModal;
+window.SnVideoOverlay = SnVideoOverlay;
+window.SnTab = SnTab;
+window.SnTooltip = SnTooltip;
+window.SnTree = SnTree;
