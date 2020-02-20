@@ -69,8 +69,7 @@ export let SnTooltip = function(options) {
         tooltip.style.left = left + "px";
         tooltip.style.top  = top + pageYOffset + "px";
     }
+    document.addEventListener("DOMContentLoaded", () => {
+        SnTooltip({});
+    });
 };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     SnTooltip({});
-// });

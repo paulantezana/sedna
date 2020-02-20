@@ -1,37 +1,18 @@
-const SnUniqueId = (length = 6) => {
-    let timestamp = +new Date;
-
-    let _getRandomInt = function (min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-    let ts = timestamp.toString();
-    let parts = ts.split("").reverse();
-    let id = "";
-    for (let i = 0; i < length; ++i) {
-        let index = _getRandomInt(0, parts.length - 1);
-        id += parts[index];
-    }
-    return id;
-};
-
-let SnModalWrapper = document.createElement('div');
-SnModalWrapper.classList.add('SnModal-gScope');
+import { SnUniqueId } from './conmon';
 
 let closeModal = (m) => {
     m.classList.remove('visible');
-    // Re-enable parent scrolling
     document.body.style.overflow = 'auto';
 };
 
 export let SnModal = {
     dataModals: null,
     openModals: [],
+    scope: undefined,
 
-    /**
-     * Start modal
-     */
     init() {
+        this.render();
+
         // Find all modals
         this.dataModals = document.querySelectorAll('[data-modal]')
         for (let i = 0; i < this.dataModals.length; i++) {
@@ -61,14 +42,21 @@ export let SnModal = {
         }
 
         // Listen keyboart close las open modal
-        closeModalsOnEsc()
+        window.addEventListener('keyup', (event) => {
+            if (SnModal.openModals.length && event.keyCode === 27) {
+                SnModal.closeLastModal()
+            }
+        })
     },
 
-    /**
-     * Open modal by name
-     * @param {string} modalName modal name
-     * @param {function} cb callback function
-     */
+    render(){
+        if(this.scope === undefined){
+            this.scope = document.createElement('div');
+            this.scope.classList.add('SnModal-gScope');
+            document.body.appendChild(this.scope);
+        }
+    },
+
     open(modalName, cb) {
         let modal = document.querySelector(`[data-modal="${modalName}"]`)
 
@@ -97,11 +85,6 @@ export let SnModal = {
         typeof cb === 'function' && cb()
     },
 
-    /**
-     * Close modal by name
-     * @param {string} modalName modal name
-     * @param {function} cb callback function
-     */
     close(modalName, cb) {
         let modal = document.querySelector(`[data-modal="${modalName}"]`)
 
@@ -119,20 +102,12 @@ export let SnModal = {
         typeof cb === 'function' && cb()
     },
 
-    /**
-     * close last modal
-     * @param {function} cb callback function
-     */
     closeLastModal(cb) {
         let modal = this.openModals.pop()
         closeModal(modal)
         typeof cb === 'function' && cb()
     },
 
-    /**
-     * open especial modal
-     * @param {object} param0 modal open whit options
-     */
     confirm({
         confirm = true,
         title = '',
@@ -145,6 +120,8 @@ export let SnModal = {
         onOk = () => { },
         onCancel = () => { }
     }) {
+        this.render();
+
         let uniqueIdName = 'Sn' + SnUniqueId();
         let divEl = document.createElement('div');
 
@@ -153,7 +130,6 @@ export let SnModal = {
             : '';
 
         // let showIcon = confirm()
-
         divEl.innerHTML = `
             <div class="SnModal-wrapper" data-modal="${uniqueIdName}" >
                 <div class="SnModal confirm">
@@ -170,7 +146,7 @@ export let SnModal = {
             </div>
         `;
 
-        SnModalWrapper.appendChild(divEl);
+        this.scope.appendChild(divEl);
         this.open(uniqueIdName);
 
         let btnCancel = document.getElementById(`cancel${uniqueIdName}`);
@@ -178,7 +154,7 @@ export let SnModal = {
             btnCancel.addEventListener('click', e => {
                 e.preventDefault();
                 this.close(uniqueIdName);
-                SnModalWrapper.removeChild(divEl);
+                this.scope.removeChild(divEl);
                 onCancel();
             });
         }
@@ -188,16 +164,12 @@ export let SnModal = {
             btnOk.addEventListener('click', e => {
                 e.preventDefault();
                 this.close(uniqueIdName);
-                SnModalWrapper.removeChild(divEl);
+                this.scope.removeChild(divEl);
                 onOk();
             });
         }
     },
 
-    /**
-     * modal info
-     * @param {object} param0 modal info whit options
-     */
     info({
         title = '',
         content = '',
@@ -214,10 +186,6 @@ export let SnModal = {
         });
     },
 
-    /**
-     * modal success
-     * @param {object} param0 modal success whit options
-     */
     success({
         title = '',
         content = '',
@@ -234,10 +202,6 @@ export let SnModal = {
         });
     },
 
-    /**
-     * modal error
-     * @param {object} param0 modal open whit options
-     */
     error({
         title = '',
         content = '',
@@ -254,10 +218,6 @@ export let SnModal = {
         });
     },
 
-    /**
-     * modal warning
-     * @param {object} param0 modal open whit options
-     */
     warning({
         title = '',
         content = '',
@@ -274,16 +234,3 @@ export let SnModal = {
         });
     }
 };
-
-let closeModalsOnEsc = () => {
-    window.addEventListener('keyup', (event) => {
-        if (SnModal.openModals.length && event.keyCode === 27) {
-            SnModal.closeLastModal()
-        }
-    })
-};
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     document.body.appendChild(SnModalWrapper);
-//     SnModal.init();
-// });

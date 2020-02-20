@@ -1,4 +1,4 @@
-export const SnActiveMenu = (links = []) => {
+const SnActiveMenu = (links = []) => {
     if (links) {
         links.map(link => {
             const url = document.location.href;
@@ -9,11 +9,11 @@ export const SnActiveMenu = (links = []) => {
     return links;
 };
 
-export const SnMenu = ({
-    menuId = "Menu",
-    toggleButtonID = "Menu-toggle",
+const SnMenu = ({
+    menuId = "SnMenu",
+    toggleButtonID = "SnMenu-toggle",
     contextId = "Site",
-    toggleClass = "Menu-is-show",
+    toggleClass = "SnMenu-is-show",
     menuCloseID = '',
 }) => {
 
@@ -110,3 +110,5 @@ export const SnMenu = ({
     SnMenuApi.init();
     return SnMenuApi;
 };
+
+export { SnMenu, SnActiveMenu }
