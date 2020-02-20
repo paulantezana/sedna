@@ -24,3 +24,11 @@ window.SnVideoOverlay = SnVideoOverlay;
 window.SnTab = SnTab;
 window.SnTooltip = SnTooltip;
 window.SnTree = SnTree;
+
+// Init Components
+document.addEventListener("DOMContentLoaded", () => {
+    SnInput();
+    SnModal.init();
+    SnTab.init();
+    SnTooltip({});
+});

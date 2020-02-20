@@ -3,8 +3,6 @@ import './prism/prism';
 
 import { Theme } from './script/theme';
 
-SnModal.init();
-
 // Primary Menu
 SnMenu({
     menuId: 'PrimaryMenu',

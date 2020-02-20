@@ -32,7 +32,3 @@ export const SnUniqueId = (length = 6) => {
     }
     return id;
 };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     SnIcon.render(); 
-// });

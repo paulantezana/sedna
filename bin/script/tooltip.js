@@ -12,7 +12,7 @@ export let SnTooltip = function(options) {
         document.body.appendChild(tooltip);
 
         let pos = e.target.getAttribute('data-position') || "center top",
-            posHorizontal = pos.split(" ")[0];
+            posHorizontal = pos.split(" ")[0],
             posVertical = pos.split(" ")[1];
 
         positionAt(e.target, tooltip, posHorizontal, posVertical);
@@ -69,7 +69,4 @@ export let SnTooltip = function(options) {
         tooltip.style.left = left + "px";
         tooltip.style.top  = top + pageYOffset + "px";
     }
-    document.addEventListener("DOMContentLoaded", () => {
-        SnTooltip({});
-    });
 };

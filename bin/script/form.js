@@ -1,4 +1,4 @@
-export let SnInput = () => {
+export  function SnInput() {
     let togglePassword = document.querySelectorAll('.togglePassword');
     if (togglePassword){
         togglePassword.forEach(item=>{
@@ -10,7 +10,3 @@ export let SnInput = () => {
         });
     }
 };
-    
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     SnInput();
-    // });

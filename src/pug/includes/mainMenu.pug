@@ -13,6 +13,6 @@ nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigatio
         - var target = val === 'https://paulantezana.com' ? '"_blank"' : ''
         li(itemprop="url")
           a(href=val target=target itemprop="name" title= "Link to " + key)= key
-    div
-      input#themeMode.SnSwitch.SnSwitch-ios(type = "checkbox")
-      label.SnSwitch-btn(for = "themeMode")
+    div.SnSwitch
+      input#themeMode.SnSwitch-control(type = "checkbox")
+      label.SnSwitch-label(for = "themeMode")

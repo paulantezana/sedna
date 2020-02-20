@@ -14,6 +14,7 @@ export let SnFreeze = {
         }
     },
     freeze(options = {}) {
+        this.render();
         let parent = document.querySelector(options.selector) || document.body;
         this.scope.setAttribute("data-text", options.text || "Loading");
         if (document.querySelector(options.selector)) {
