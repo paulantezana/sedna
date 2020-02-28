@@ -6,6 +6,9 @@ export const SnTab = {
             let exist = this.storage.find(item => item === tabs[i]);
             if(!exist){
                 let snTabHeader = tabs[i].querySelector('.SnTab-header');
+                if(!snTabHeader){
+                    continue;
+                }
                 let snTabContents = tabs[i].querySelectorAll('.SnTab-content');
                 let snTabTitles = snTabHeader.children;
                 

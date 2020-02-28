@@ -30,5 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     SnInput();
     SnModal.init();
     SnTab.init();
+    SnCollapse.init();
     SnTooltip({});
 });
