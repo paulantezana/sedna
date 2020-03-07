@@ -1,7 +1,6 @@
 -
   let menu = {
-    'Documentation': '/documentation',
-    'UI Interfaces': '/ui',
+    'Documentation': '/documentation/starter.html',
     'Examples': '/examples',
   };
 
@@ -13,6 +12,6 @@ nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigatio
         - var target = val === 'https://paulantezana.com' ? '"_blank"' : ''
         li(itemprop="url")
           a(href=val target=target itemprop="name" title= "Link to " + key)= key
-    div.SnSwitch
+    div.SnSwitch.SnMl-2
       input#themeMode.SnSwitch-control(type = "checkbox")
       label.SnSwitch-label(for = "themeMode")

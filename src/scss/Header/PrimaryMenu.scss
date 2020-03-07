@@ -80,18 +80,18 @@
       }
       &.is-active {
         position: relative;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 14px;
-          height: 5px;
-          border-bottom: 5px solid var(--snColor1);
-          border-right: 7px solid transparent;
-          border-left: 7px solid transparent;
-        }
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: 0;
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   width: 14px;
+        //   height: 5px;
+        //   border-bottom: 5px solid var(--snColor1);
+        //   border-right: 7px solid transparent;
+        //   border-left: 7px solid transparent;
+        // }
       }
     }
 

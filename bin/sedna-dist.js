@@ -32,4 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     SnTab.init();
     SnCollapse.init();
     SnTooltip({});
+    SnIcon.render();
 });

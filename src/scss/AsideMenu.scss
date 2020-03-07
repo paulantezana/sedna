@@ -10,6 +10,7 @@ $asideMenuWidth: 220px;
     &-item{
         padding-left: 8px;
         position: relative;
+        margin-bottom: 4px;
         a{
             display: block;
             padding: 8px 0 8px 8px;
@@ -17,9 +18,11 @@ $asideMenuWidth: 220px;
         }
         &:hover{
             background: var(--snColorHover);
+            border-radius: 16px;
         }
         &.is-active{
             background: var(--snColor1);
+            border-radius: 16px;
             a {
                 color: var(--snColor1Inverse);
             }
@@ -39,8 +42,6 @@ $asideMenuWidth: 220px;
             background: var(--snColorBg);
             z-index: 100;
             width: $asideMenuWidth;
-            border-right: 1px solid var(--snColorBorder);
-            
         }
     }
 }
