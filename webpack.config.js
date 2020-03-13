@@ -48,11 +48,11 @@ module.exports = {
         app: ['babel-polyfill','./src/app.js'],
     },
     output: {
-        path: path.resolve(__dirname, "docs"),
+        path: path.resolve(__dirname, "build"),
         filename: 'assets/script/[name].js'
     },
     devServer: {
-        contentBase: path.join(__dirname, "docs"),
+        contentBase: path.join(__dirname, "build"),
         compress: true,
         port: 3000,
         open: true,

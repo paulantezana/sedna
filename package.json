@@ -4,7 +4,9 @@
   "description": "libreria css javascript",
   "main": "bin/sedna.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "bin": "bin",
+    "docs": "docs"
   },
   "scripts": {
     "server": "webpack-dev-server",
@@ -13,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulantezana/sedna.git"
+    "url": "https://github.com/paulantezana/sedna.git"
   },
   "author": "paulantezana",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/paulantezana/sedna/issues"
   },
-  "homepage": "https://paulantezana.github.io/Sedna",
+  "homepage": "https://sedna.paulantezana.com",
   "style": "bin/sedna.scss",
   "devDependencies": {
     "@babel/core": "^7.6.0",
