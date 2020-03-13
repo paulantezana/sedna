@@ -6,10 +6,19 @@ append config
   -template = 2
   
 block main
-  .SnMb-16
-    h2 NPM
+  .SnMb-5
+    h2 First Example
+    p Here is a simple codesandbox example to show the usage of Sedna.
+    iframe(
+      src="https://codesandbox.io/embed/sedna-getting-started-qmxxd?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Sedna Getting Started"
+      allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+    )
 
-    h3 Installation
+  .SnMb-5
+    h2 NPM
     p We recommend using npm or yarn to install, it not only facilitates development, but also allows you to take advantage of the rich ecosystem of Javascript packages and tools.
     pre.language-bash
         code= 'npm install --save sedna'
@@ -22,13 +31,11 @@ block main
         @include SnBtn();
     pre.language-html
         code= '<div class="SnBtn primary">Primary</div>'
-  .SnMb-16
-    h2 Basic
-    h3 Download
-    div.SnMb-16
+
+  .SnMb-5
+    h2 Dowloand
+    .SnGrid.s-grid-2.SnMb-5
       a(href="/assets/css/sedna.css" download="sedna.css").SnBtn.primary Download Css
-    div.SnMb-16
       a(href="/assets/script/sedna.js" download="sedna.js").SnBtn.warning Download Js
-    h3 Using
     pre.language-html
       code= '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <link rel="stylesheet" href="sedna.css">\n    <script src="sedna.js"></script>\n</head>\n<body>\n    <div class="SnBtn primary">Primary</div>\n</body>\n</html>\n'
