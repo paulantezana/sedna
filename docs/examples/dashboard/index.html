@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+    <style>
+        #GridLayout{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .item{
+            background: red;
+            height: 25px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="GridLayout">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const containerSelector = '#GridLayout';
+            const containers = document.querySelectorAll(containerSelector);
+
+            if (containers.length === 0) {
+                return false;
+            }
+
+            const swappable = new Draggable.Swappable(containers, {
+                draggable: '.item',
+                mirror: {
+                    appendTo: containerSelector,
+                    constrainDimensions: true,
+                },
+                plugins: [Draggable.Plugins.ResizeMirror],
+            });
+
+            swappable.on('drag:start', () => console.log('drag:start'));
+            swappable.on('drag:move', () => console.log('drag:move'));
+            swappable.on('drag:stop', () => console.log('drag:stop'));
+        });
+    </script>
+</body>
+</html>
