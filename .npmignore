@@ -9,6 +9,6 @@
 .wafpickle-*
 config.gypi
 CVS
-template
+examples
 .idea
 build
