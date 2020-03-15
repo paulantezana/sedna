@@ -128,9 +128,30 @@
 .icon-user-plus:before {
   content: "\44";
 }
-.icon-users:before {
-  content: "\45";
-}
 .icon-question-circle:before {
   content: "\46";
+}
+.icon-plus:before {
+  content: "\47";
+}
+.icon-excel:before {
+  content: "\48";
+}
+.icon-print:before {
+  content: "\49";
+}
+.icon-file-text-o:before {
+  content: "\4a";
+}
+.icon-refresh:before {
+  content: "\4b";
+}
+.icon-search:before {
+  content: "\45";
+}
+.icon-times:before {
+  content: "\4c";
+}
+.icon-files-o:before {
+  content: "\4d";
 }

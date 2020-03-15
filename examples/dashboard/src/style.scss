@@ -26,14 +26,11 @@ $breakpoints : (
 body{
   font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 0.90rem;
-  // line-height: 1.5384616;
-  //background: #EFF3F6;
-  // background: var(--snColorBg);
 }
 
 
-[class*="icon-"]{
-  top: 4px;
+[class*="icon-"]::before{
+  top: 2px;
   position: relative;
 }
 
@@ -142,27 +139,16 @@ body{
   }
   li {
     position: relative;
-    // &.is-active{
-    //  a{
-    //    background: var(--snColorDarkSmoother);
-    //    color: white;
-    //  }
-    // }
   }
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     background: var(--snColorDark);
-    a {
-      padding-left: 50px;
-    }
   }
-  &-item,
   a {
     color: var(--snColorDarkInverse);
     text-decoration: none;
-    line-height: 3rem;
     padding: 0 8px 0 20px;
     display: flex;
     align-items: center;
@@ -176,12 +162,24 @@ body{
       align-items: center;
       justify-content: space-between;
     }
-    &:hover {
-      background: var(--snColorDarkSmoother);
-      color: white;
-    }
     .toggle {
       margin: 0 0 0 8px;
+    }
+  }
+  & > li > a {
+    line-height: 3rem;
+    &:hover {
+      background: var(--snColor1);
+      color: white;
+    }
+  }
+  ul {
+    a {
+      padding: 8px 0  8px 50px;
+      line-height: 1.5rem;
+      &:hover{
+        color: var(--snColor1Lighter);
+      }
     }
   }
 }
@@ -202,27 +200,25 @@ body{
 
 // Divider
 .AsideMenu {
-    &-divider {
-        padding: 10px 20px;
-        text-transform: uppercase;
-        font-size: 11px;
-        font-weight: 700;
+  &-divider {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+  }
+}
+
+// Large
+.AsideMenu {
+    ul {
+        display: none;
+        &.is-show{
+            display: block;
+        }
     }
 }
 
-//@mixin AsideMenuInLarge(){
-  .AsideMenu {
-      ul {
-          display: none;
-          &.is-show{
-              display: block;
-          }
-      }
-  }
-//}
-
-//@extend AsideMenuInLarge();
-
+// Small
 @mixin AsideMenuInSmall(){
   @include from(l) {
     .AsideMenu {
@@ -232,6 +228,33 @@ body{
         padding: 0;
         font-size: 0;
       }
+
+      // All Levels
+      li {
+        ul {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          width: 220px;
+          display: none;
+          a {
+            padding: 8px 20px;
+          }
+        }
+        &:hover {
+          > ul {
+            display: block;
+          }
+          > a span {
+            display: flex;
+          }
+          > a {
+            color: var(--snColor1Lighter);
+          }
+        }
+      }
+
+      // Fisrt level
       > li {
         > a {
           justify-content: center;
@@ -244,7 +267,7 @@ body{
             text-align: left;
             padding: 0 20px;
             width: 220px;
-            background: var(--snColorDarkSmoother);
+            background: var(--snColor1);
             display: none;
           }
           .toggle {
@@ -254,33 +277,15 @@ body{
             margin-right: 0;
           }
         }
-      }
-      li {
-        ul {
-          position: absolute;
-          top: 0;
-          left: 100%;
-          width: 220px;
-          display: none;
-          a {
-            padding: 0 20px;
-          }
-        }
-        &:hover {
-          > ul {
-            display: block;
-          }
-          > a span {
-            display: flex;
-          }
+        &:hover{
           > a {
-            background: var(--snColorDarkSmoother);
+            background: var(--snColor1);
             color: white;
           }
         }
-      }
-      > li > ul {
-        top: 100%;
+        > ul{
+          top: 100%;
+        }
       }
     }
   }
@@ -522,13 +527,18 @@ body{
   &-profile{
       text-transform: uppercase;
   }
-  &-description{
+  &-header{
     line-height: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
+    border-bottom: 1px solid var(--snColorBorder);
     &:hover{
       background: none;
     }
+  }
+  &-footer{
+    border-top: 1px solid var(--snColorBorder);
+    text-align: center;
   }
 }
 
@@ -556,7 +566,8 @@ body{
 
 
 
-.User{
+.User,
+.Notification {
   &-item{
     text-decoration: none;
     color: var(--snColorText);
@@ -576,5 +587,47 @@ body{
   }
   &-description{
     color: var(--snColorTextAlt);
+  }
+}
+
+.Notification{
+  line-height: 1rem;
+  display: flex;
+  min-width: 300px;
+  padding: .6rem 1rem;
+  &-avatar{
+    margin-right: 1rem;
+    flex: 1 0 auto;
+  }
+  &-body{
+    p{ margin-top: 0; }
+  }
+  &-time{
+    color: var(--snColorTextAlt);
+  }
+}
+
+.SnToolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 0.8rem 0;
+  @include to(l){
+    padding: 0 1rem;
+  }
+  @include to(m){
+    flex-direction: column;
+  }
+  &-left{
+    @include to(m){
+      margin-bottom: 16px;
+    }
+  }
+  &-right{
+    @include to(m){
+      margin-bottom: 8px;
+    }
   }
 }

@@ -11,4 +11,4 @@ config.gypi
 CVS
 examples
 .idea
-build
+docs

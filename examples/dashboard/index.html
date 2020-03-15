@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="images/logo.svg">
     <link rel="stylesheet" href="css/sedna.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font/styles.css">
@@ -23,34 +24,53 @@
                                 <i class="icon-bell-o"></i>
                             </a>
                             <ul>
-                                <li class="HeaderMenu-description"><div>Messages <span>5</span></div></li>
-                                <li class="User-item">
-                                    <a href="/" class="SnAvatar">
+                                <li class="HeaderMenu-header"><div>Notification <span>5</span></div></li>
+                                <li class="Notification">
+                                    <div class="Notification-avatar SnAvatar">
                                         <img src="images/avatar.svg" alt="avatar">
-                                    </a>
-                                    <div>
-                                        <div class="User-title" id="userTitleInfo">admin</div>
-                                        <div class="User-description" id="userDescriptionInfo">contact@gamil.com</div>
+                                    </div>
+                                    <div class="Notification-body">
+                                        <p class="SnMb-2">
+                                            <strong>User name</strong>
+                                            <span> replied to your comment : "Hello world 😍"</span>
+                                        </p>
+                                        <div class="Notification-time">
+                                            <span>💬</span>
+                                            <span>Just Now</span>
+                                        </div>
                                     </div>
                                 </li>
-                                <li class="User-item">
-                                    <a href="/" class="SnAvatar">
+                                <li class="Notification">
+                                    <div class="Notification-avatar SnAvatar">
                                         <img src="images/avatar.svg" alt="avatar">
-                                    </a>
-                                    <div>
-                                        <div class="User-title" id="userTitleInfo">admin</div>
-                                        <div class="User-description" id="userDescriptionInfo">contact@gamil.com</div>
+                                    </div>
+                                    <div class="Notification-body">
+                                        <p class="SnMb-2">
+                                            <strong>Current user</strong>
+                                            <span>Lorem ipsum, dolor sit amet.</span>
+                                        </p>
+                                        <div class="Notification-time">
+                                            <span>💬</span>
+                                            <span>Just Now</span>
+                                        </div>
                                     </div>
                                 </li>
-                                <li class="User-item">
-                                    <a href="/" class="SnAvatar">
+                                <li class="Notification">
+                                    <div class="Notification-avatar SnAvatar">
                                         <img src="images/avatar.svg" alt="avatar">
-                                    </a>
-                                    <div>
-                                        <div class="User-title" id="userTitleInfo">admin</div>
-                                        <div class="User-description" id="userDescriptionInfo">contact@gamil.com</div>
+                                    </div>
+                                    <div class="Notification-body">
+                                        <p class="SnMb-2">
+                                            <strong>Other user</strong>
+                                            <span> replied to your comment</span>
+                                        </p>
+                                        <div class="Notification-time">
+                                            <span>💬</span>
+                                            <span>Just Now</span>
+                                        </div>
                                     </div>
                                 </li>
+                                <li class="HeaderMenu-footer"><a href="#">View all</a></li>
                             </ul>
                         </li>
                         <li>
@@ -83,7 +103,272 @@
         </div>
         <div class="AdminLayout-main">
             <div class="SnContent">
-                content
+                <div class="SnToolbar">
+                    <div class="SnToolbar-left">
+                        <i class="icon-ellipsis-v SnMr-2"></i> <strong>USERS</strong>
+                    </div>
+                    <div class="SnToolbar-right">
+                        <div class="SnBtn jsUserAction" onclick="userToPrint()">
+                            <i class="icon-print"></i>
+                        </div>
+                        <div class="SnBtn jsUserAction" onclick="userToExcel()">
+                            <i class="icon-file-text-o"></i>
+                        </div>
+                        <div class="SnBtn jsUserAction" onclick="userList()">
+                            <i class="icon-refresh"></i>
+                        </div>
+                        <div class="SnBtn primary jsUserAction" onclick="userShowModalCreate()">
+                            <i class="icon-plus SnMr-2"></i> New
+                        </div>
+                    </div>
+                </div>
+                <div class="SnCard">
+                    <div class="SnCard-body">
+                        <div class="SnControl-wrapper SnMb-5">
+                            <input type="text" class="SnForm-control SnControl" id="searchContent" placeholder="Search...">
+                            <span class="SnControl-suffix icon-search"></span>
+                        </div>
+                        <div class="SnTable-wrapper">
+                            <table class="SnTable" id="userTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px">Avatar</th>
+                                        <th>Full name</th>
+                                        <th>Phone</th>
+                                        <th>Sate</th>
+                                        <th>Profile</th>
+                                        <th>Email</th>
+                                        <th style="width: 50px"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SnAvatar">
+                                                <img src="images/avatar.svg" alt="avatar">
+                                            </div>
+                                        </td>
+                                        <td>name 1</td>
+                                        <td>phone 1</td>
+                                        <td>true</td>
+                                        <td>admin</td>
+                                        <td>email@gmail.com</td>
+                                        <td>
+                                            <div class="SnTable-action">
+                                                <div class="SnBtn icon jsUserOption" onclick="userShowModalUpdate(1)">
+                                                    <i class="icon-pencil-square-o"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="SnModal-wrapper" data-modal="userModalForm">
+                <div class="SnModal">
+                    <div class="SnModal-close" data-modalclose="userModalForm">
+                        <i class="icon-times"></i>
+                    </div>
+                    <div class="SnModal-header"><i class="icon-files-o SnMr-2"></i> Usuario</div>
+                    <div class="SnModal-body">
+                        <form action="" class="SnForm" id="userForm" onsubmit="userSubmit()">
+                            <input type="hidden" class="SnForm-control" id="userId">
+                            <div class="SnForm-item required">
+                                <label for="userEmail" class="SnForm-label">Email</label>
+                                <div class="SnControl-wrapper">
+                                    <i class="icon-file-text-o SnControl-prefix"></i>
+                                    <input type="email" class="SnForm-control SnControl" id="userEmail" required>
+                                </div>
+                            </div>
+                            <div class="SnForm-item required">
+                                <label for="userUserName" class="SnForm-label">User name</label>
+                                <div class="SnControl-wrapper">
+                                    <i class="icon-file-text-o SnControl-prefix"></i>
+                                    <input type="text" class="SnForm-control SnControl" id="userUserName" required>
+                                </div>
+                            </div>
+                            <div class="SnForm-item required">
+                                <label for="userPassword" class="SnForm-label">Password</label>
+                                <div class="SnControl-wrapper">
+                                    <i class="icon-key SnControl-prefix"></i>
+                                    <input type="password" class="SnForm-control SnControl" id="userPassword" required>
+                                    <span class="SnControl-suffix icon-eye togglePassword"></span>
+                                </div>
+                            </div>
+                            <div class="SnForm-item required">
+                                <label for="userPasswordConfirm" class="SnForm-label">Password confirm</label>
+                                <div class="SnControl-wrapper">
+                                    <i class="icon-key SnControl-prefix"></i>
+                                    <input type="password" class="SnForm-control SnControl" id="userPasswordConfirm" required>
+                                    <span class="SnControl-suffix icon-eye togglePassword"></span>
+                                </div>
+                            </div>
+                            <div class="SnForm-item">
+                                <div class="SnSwitch">
+                                    <input class="SnSwitch-control" type="checkbox" id="userState">
+                                    <label class="SnSwitch-label" for="userState">State</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="SnBtn primary block" id="userFormSubmit">Save</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="AdminLayout-aside">
@@ -93,16 +378,38 @@
                         <div class="Branding">
                             <a href="/" class="Branding-link">
                                 <img src="images/logo.svg" alt="Logo" class="Branding-img">
-                                <span class="Branding-name">Name</span>
+                                <span class="Branding-name">Dashboard</span>
                             </a>
                         </div>
                     </div>
                     <ul class="AsideMenu" id="AsideMenu">
+                        <li class="AsideMenu-divider">App</li>
                         <li>
-                            <a href="#"> <i class="icon-book"></i> <span>Reportes </span> </a>
+                            <a href="#"> <i class="icon-book"></i> <span>General </span> </a>
                             <ul>
-                                <li><a href="#">Venta diaria</a></li>
+                                <li><a href="#">Starter</a></li>
+                                <li><a href="#">Button</a></li>
+                                <li>
+                                    <a href="#">Theme</a>
+                                    <ul>
+                                        <li><a href="#">Dark</a></li>
+                                        <li><a href="#">Light</a></li>
+                                    </ul>
+                                </li>
                             </ul>
+                        </li>
+                        <li class="AsideMenu-divider">Components</li>
+                        <li>
+                            <a href="#"> <i class="icon-clone"></i> <span>Modal </span> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="icon-ticket"></i> <span>Alert </span> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="icon-houzz"></i> <span>Message <span class="SnTag success">5</span></span> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="icon-server"></i> <span>Freeze </span> </a>
                         </li>
                     </ul>
                     <div class="AsideFooter">
@@ -117,5 +424,6 @@
     </div>
     <script src="js/sedna.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
