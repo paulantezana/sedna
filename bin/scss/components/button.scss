@@ -28,6 +28,9 @@
       &::before {
         border: 2px solid var(--snColorText);
       }
+      &:not([disabled]){
+        pointer-events: none;
+      }
     }
     &-group{
       display: flex;

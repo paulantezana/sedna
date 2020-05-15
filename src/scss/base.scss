@@ -21,3 +21,10 @@ h6 {
   position: relative;
   top: 4px;
 }
+
+code{
+  background: var(--snColorHover);
+  border-radius: 4px;
+  margin: 0 .2rem;
+  padding: 0 .2rem;
+}

@@ -1,6 +1,6 @@
 .CodeBox {
-  margin-bottom: 1rem;
   border: 1px solid var(--snColorBorder);
+  // background: var(--snColorBgAlt);
   &-demo {
     padding: 42px 24px 50px;
   }
@@ -110,6 +110,22 @@
       @include from(l) {
         display: none;
       }
+    }
+  }
+}
+
+// GRID
+.CodeBox-demo{
+  .SnGrid{
+    background: var(--snColorBg) !important;
+    & > * {
+      min-height: 100px;
+      background: var(--snColor1);
+      color: var(--snColor1Inverse);
+      font-weight: bold;
+      display: grid;
+      align-content: center;
+      justify-content: center;
     }
   }
 }

@@ -8,8 +8,7 @@
     .#{$classPrefix}Grid {
         display               : grid;
         grid-template-columns : 100%;
-        grid-column-gap       : var(--gap);
-
+        
         @for $i from 0 through 4 {
             &.gap-#{$i} {
                 --gap: #{$lUnit * $i};
@@ -17,9 +16,12 @@
         }
 
         // Add Gap
-        &.row-gap,
-        &.rows-gap {
-            grid-row-gap : var(--gap);
+        &.row-gap {
+            grid-row-gap: var(--gap);
+        }
+
+        &.col-gap{
+            grid-column-gap: var(--gap);
         }
 
         // Define columnas en containers e items por breakpoint
@@ -41,14 +43,13 @@
                         }
                     }
 
-                    // Columnas en los items
-                    > .span-#{$size}-#{$i},
-                    > .#{$size}-cols-#{$i} {
+                    // col en los items
+                    > .#{$size}-col-#{$i} {
                         grid-column-end : span $i;
                     }
 
-                    // rows en los items
-                    > .#{$size}-rows-#{$i} {
+                    // row en los items
+                    > .#{$size}-row-#{$i} {
                         grid-row-end : span $i;
                     }
 

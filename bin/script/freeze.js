@@ -8,7 +8,9 @@ export let SnFreeze = {
             setTimeout(() => {
                 if (element) {
                     element.classList.remove("is-unfreezing");
-                    element.parentElement.removeChild(element);
+                    if(element.parentElement != null || element.parentElement != undefined){
+                        element.parentElement.removeChild(element);
+                    }
                 }
             }, 250);
         }

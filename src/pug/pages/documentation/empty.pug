@@ -1,0 +1,16 @@
+extends ../../config/template
+append config
+    -title = "Empty"
+    -description = "Empty."
+    -ogUrl = "/index.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            '', 
+            '<div class="SnEmpty">\n</div>'
+        )
+            .SnEmpty
+                img(src="/assets/images/empty.svg", alt="empty")
+                p No hay datos

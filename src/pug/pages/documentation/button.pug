@@ -5,7 +5,7 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    .SnGrid.l-grid-2
+    .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
             'Basic', 
             'There are default button, primary button, success button, warning button, error button and white button in sedna', 
@@ -65,3 +65,39 @@ block main
             .SnBtn-group
                 .SnBtn.loading Default
                 .SnBtn.primary.loading Primary
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Color
+                    td
+                        code .primary 
+                        code .success
+                        code .warning 
+                        code .error 
+                        code .white 
+                tr
+                    td Size
+                    td 
+                        code .sm 
+                        code .lg 
+                tr
+                    td Loading
+                    td
+                        code .loading
+                tr
+                    td Disabled
+                    td
+                        code .disabled
+                tr
+                    td Block
+                    td
+                        code .block
+                tr
+                    td Group
+                    td
+                        code .SnBtn-group
