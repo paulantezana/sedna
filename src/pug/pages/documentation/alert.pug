@@ -7,10 +7,15 @@ append config
 
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
-        +codeBox(
-            'Basic', 
-            '', 
-            '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert error"> <span class="SnIcon-error"></span>message in alert</div>'
+        +codeBox2(
+            'Basic',
+            '',
+            [
+                {
+                    languaje: 'html',
+                    code: '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert error"> <span class="SnIcon-error"></span>message in alert</div>'
+                }
+            ]
         )
             .SnAlert 
                 span.SnIcon-question
