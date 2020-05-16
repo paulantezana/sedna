@@ -1,13 +1,14 @@
 extends ../../config/template
 append config
-    -title = "Contain"
-    -description = "Contain."
-    -ogUrl = "/index.html"
+    -title = "Container"
+    -description = "Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container"
+    -ogUrl = "/contain.html"
     -template = 2
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
             'Basic', 
-            '', 
-            '<div class="SnContainer">\n</div>'
+            'Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container', 
+            '<div class="SnContainer">\n    <!-- Content here -->\n</div>'
         )
+            code .SnContainer

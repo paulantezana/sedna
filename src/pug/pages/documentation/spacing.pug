@@ -1,20 +1,59 @@
 extends ../../config/template
 append config
     -title = "Spacing"
-    -description = "Margin, Padding and Divider"
+    -description = "Assign responsive-friendly margin or padding values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties."
     -ogUrl = "/index.html"
     -template = 2
 
 block main
-    .SnGrid.col-gap.row-gap.l-grid-2
-        +codeBox(
-            'Basic', 
-            '', 
-            '<div class="SnMt-16">Margin top 16px ...</div>\n<div class="SnMb-16">Margin button 16px ...</div>\n<div class="SnMt-32">Margin top 32px ...</div>\n<div class="SnMb-32">Margin button 32px ...</div>\n<div class="SnMt-64">Margin top 64px ...</div>\n<div class="SnMb-64">Margin button 64px ...</div>'
-        )
-            .SnMt-16 Margin top 16px ...
-            .SnMb-16 Margin button 16px ...
-            .SnMt-32 Margin top 32px ...
-            .SnMb-32 Margin button 32px ...
-            .SnMt-64 Margin top 64px ...
-            .SnMb-64 Margin button 64px ...
+    +codeBox(
+        'Example',
+        '', 
+        '<div class="SnMt-3"></div>'
+    )
+        div Where property is one of:
+        ul
+            li
+                code m
+                | - for classes that set 
+                code margin
+            li
+                code p
+                | - for classes that set 
+                code padding
+        div Where sides is one of:
+        ul
+            li
+                code t
+                | - for classes that set 
+                code margin-top
+                | or 
+                code padding-top
+            li
+                code b
+                | - for classes that set 
+                code margin-bottom
+                | or 
+                code padding-bottom
+            li
+                code l
+                | - for classes that set 
+                code margin-left 
+                | or 
+                code padding-left
+            li
+                code r
+                | - for classes that set 
+                code margin-right
+                | or 
+                code padding-right
+        div Where size is one of:
+            ul
+                li
+                    code 1
+                    |  (by default) for classes that set the
+                    code margin 
+                    | or 
+                    code padding 
+                    | to
+                    code 0.5
