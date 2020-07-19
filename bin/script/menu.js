@@ -15,6 +15,8 @@ const SnMenu = ({
     contextId = "Site",
     toggleClass = "SnMenu-is-show",
     menuCloseID = '',
+    iconClassDown = 'icon-down',
+    iconClassUp = 'icon-up',
 }) => {
 
     let SnMenuApi = {
@@ -37,16 +39,37 @@ const SnMenu = ({
                     let content = ele.lastElementChild; // Second element
 
                     // Creando un nuevo elemento e insertando justo despues del enlace
-                    let iconToggleEle = document.createElement("i");
-                    iconToggleEle.classList.add("icon-down");
-                    iconToggleEle.classList.add("toggle");
-                    toggle.appendChild(iconToggleEle);
-                    toggle.classList.add('is-toggle')
+                    let iconToggleEle = document.createElement('i');
+                    iconClassDown.split(' ').forEach(iClass=>{
+                        iconToggleEle.classList.add(iClass);
+                    });
 
-                    iconToggleEle.addEventListener("click", e => {
+                    iconToggleEle.classList.add('toggle');
+                    toggle.appendChild(iconToggleEle);
+                    toggle.classList.add('is-toggle');
+
+                    let toggleItem = false;
+                    iconToggleEle.addEventListener('click', e => {
                         e.preventDefault();
-                        iconToggleEle.classList.toggle("icon-up"); // add Icon up
-                        content.classList.toggle("is-show"); // add class show menu
+                        if(toggleItem){
+                            iconClassUp.split(' ').forEach(iClass=>{
+                                iconToggleEle.classList.remove(iClass); // add Icon up
+                            });
+                            iconClassDown.split(' ').forEach(iClass=>{
+                                iconToggleEle.classList.add(iClass);
+                            });
+                            toggleItem = false;
+                        } else {
+                            iconClassDown.split(' ').forEach(iClass=>{
+                                iconToggleEle.classList.remove(iClass);
+                            });
+                            iconClassUp.split(' ').forEach(iClass=>{
+                                iconToggleEle.classList.add(iClass); // add Icon up
+                            });
+                            toggleItem = true;
+                        }
+
+                        content.classList.toggle('is-show'); // add class show menu
                     });
                 }
             }
@@ -57,7 +80,7 @@ const SnMenu = ({
             // Toggle menu
             this.toggleAction = document.getElementById(toggleButtonID);
             if (this.toggleAction) {
-                this.toggleAction.addEventListener("click", () => {
+                this.toggleAction.addEventListener('click', () => {
                     this.toggle();
                 });
             }
@@ -66,7 +89,7 @@ const SnMenu = ({
             if (menuCloseID !== '') {
                 this.closeAction = document.getElementById(menuCloseID);
                 if (this.closeAction) {
-                    this.closeAction.addEventListener("click", () => {
+                    this.closeAction.addEventListener('click', () => {
                         this.close();
                     });
 
