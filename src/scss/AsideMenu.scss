@@ -1,6 +1,6 @@
 $asideMenuWidth: 220px;
 .AsideMenu{
-    @extend %snList;
+    @extend %SnList;
     &-header{
         font-weight: 500;
         padding: 8px 0;

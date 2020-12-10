@@ -52,8 +52,8 @@
     // ------------------------
     // MENU STYLES
     #{$menu-class}{
-        @extend %snList;
-        li ul{  @extend %snList;  }
+        @extend %SnList;
+        li ul{  @extend %SnList;  }
     }
     #{$menu-class}{
         a{
