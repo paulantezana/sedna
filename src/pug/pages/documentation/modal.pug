@@ -21,7 +21,6 @@ block main
                     .SnModal-body
                         p modal content ...
                         .SnBtn.primary(data-modaltrigger="innerModal") Inner Open Modal
-
             .SnModal-wrapper(data-modal="innerModal")
                 .SnModal
                     .SnModal-close(data-modalclose="innerModal")
@@ -29,12 +28,11 @@ block main
                     .SnModal-header Imprimir
                     .SnModal-body
                         p modal content ...
-
-
         section.CodeBox
             .CodeBox-demo
                 .SnBtn(onclick="onConfirmConfirm()") confirm
                 .SnBtn(onclick="onConfirmDelete()") delete
+                .SnBtn(onclick="onConfirmCancel()") Cancel
             .CodeBox-meta
                 .CodeBox-title Confirmation modal dialog
                 .CodeBox-description Use confirm() to show a confirmation modal dialog.
@@ -49,10 +47,14 @@ block main
                             title: 'Do you Want to delete these items?',
                             content: 'Some descriptions',
                             onOk() {
-                                console.log('onOk')
+                                SnMessage.info({
+                                    content: 'onOk'
+                                });
                             },
                             onCancel() {
-                                console.log('onCancel')
+                                SnMessage.info({
+                                    content: 'onCancel'
+                                });
                             }
                         });
                     }
@@ -64,10 +66,35 @@ block main
                             okType: 'error',
                             cancelText: 'No',
                             onOk() {
-                                console.log('onOk')
+                                SnMessage.info({
+                                    content: 'onOk'
+                                });
                             },
                             onCancel() {
-                                console.log('onCancel')
+                                SnMessage.info({
+                                    content: 'onCancel'
+                                });
+                            }
+                        });
+                    }
+                    let onConfirmCancel = ()=>{
+                        SnModal.confirm({
+                            title: 'Are you sure cancel this task?',
+                            content: 'Some descriptions',
+                            input: true,
+                            inputValue: 'Cancel by mistake',
+                            okText: 'Yes',
+                            okType: 'error',
+                            cancelText: 'No',
+                            onOk(message) {
+                                SnMessage.info({
+                                    content: 'Ok = ' + message
+                                });
+                            },
+                            onCancel(message) {
+                                SnMessage.info({
+                                    content: 'Cancel = ' + message
+                                });
                             }
                         });
                     }
@@ -77,10 +104,14 @@ block main
                             title: 'Do you Want to delete these items?',
                             content: 'Some descriptions',
                             onOk() {
-                                console.log('onOk')
+                                SnMessage.info({
+                                    content: 'onOk'
+                                });
                             },
                             onCancel() {
-                                console.log('onCancel')
+                                SnMessage.info({
+                                    content: 'onCancel'
+                                });
                             }
                         });
 
@@ -91,13 +122,36 @@ block main
                             okType: 'error',
                             cancelText: 'No',
                             onOk() {
-                                console.log('onOk')
+                                SnMessage.info({
+                                    content: 'onOk'
+                                });
                             },
                             onCancel() {
-                                console.log('onCancel')
+                                SnMessage.info({
+                                    content: 'onCancel'
+                                });
                             }
                         });
 
+                        SnModal.confirm({
+                            title: 'Are you sure cancel this task?',
+                            content: 'Some descriptions',
+                            input: true,
+                            inputValue: 'Cancel by mistake',
+                            okText: 'Yes',
+                            okType: 'error',
+                            cancelText: 'No',
+                            onOk(message) {
+                                SnMessage.info({
+                                    content: 'Ok = ' + message
+                                });
+                            },
+                            onCancel(message) {
+                                SnMessage.info({
+                                    content: 'Cancel = ' + message
+                                });
+                            }
+                        });
         section.CodeBox
             .CodeBox-demo
                 .SnBtn(onclick="onConfirmInfo()") info
@@ -177,3 +231,71 @@ block main
                                 console.log('onOk')
                             },
                         });
+
+    h2 API
+    h3 Confirmation modal dialog
+    p Properties
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr
+                    td title
+                    td Title modal
+                    td string
+                    td -
+                tr
+                    td content
+                    td Content modal
+                    td string
+                    td -
+                tr
+                    td input
+                    td Show input control
+                    td bolean
+                    td false
+                tr
+                    td inputValue
+                    td Set input value
+                    td string
+                    td -
+                tr
+                    td okText
+                    td Set ok text
+                    td string
+                    td OK
+                tr
+                    td okType
+                    td Set ok button type
+                    td string
+                    td primary
+                tr
+                    td cancelText
+                    td Set cancel text
+                    td string
+                    td Cancelar
+    p Methods
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr
+                    td onOk
+                    td ok handle
+                    td (message) => void
+                    td 
+                tr
+                    td onCancel
+                    td cancel handle
+                    td (message) => void
+                    td 

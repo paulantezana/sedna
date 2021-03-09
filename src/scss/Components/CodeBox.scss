@@ -1,6 +1,8 @@
 .CodeBox {
-  border: 1px solid var(--snColorBorder);
-  // background: var(--snColorBgAlt);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
+  border: 0;
+  border-radius: 4px;
+  background: var(--snColorBgAlt);
   &-demo {
     padding: 42px 24px 50px;
   }
@@ -27,7 +29,7 @@
     top: -10px;
     margin-left: 16px;
     padding: 1px 8px;
-    background: var(--snColorBg);
+    background: var(--snColorBgAlt);
     border-radius: 2px 2px 0 0;
     font-weight: 500;
   }
@@ -36,7 +38,7 @@
     padding: 18px 24px 12px;
   }
   &-actions {
-    padding: 12px 0;
+    padding: 4px 0;
     text-align: center;
     border-top: 1px dashed var(--snColorBorder);
     opacity: 0.7;
@@ -116,7 +118,7 @@
 
 // GRID
 .CodeBox-demo{
-  .SnGrid{
+  .DocGrid{
     background: var(--snColorBg) !important;
     & > * {
       min-height: 100px;

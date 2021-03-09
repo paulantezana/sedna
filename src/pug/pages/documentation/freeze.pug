@@ -2,29 +2,82 @@ extends ../../config/template
 append config
     -title = "Freeze"
     -description = "Freeze."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/freeze.html"
     -template = 2
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
-        section.CodeBox
-            .CodeBox-demo
-                .SnBtn.primary(onclick="startFreeze()") Freeze
-                script.
-                    let startFreeze = () => {
-                        SnFreeze.freeze();
-                        setTimeout(() => {
-                            SnFreeze.unFreeze();
-                        }, 2000);
-                    }
-            .CodeBox-meta
-                .CodeBox-title Freeze
-                .CodeBox-description Freeze.
-                .CodeBox-actions
-                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
-                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
-                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
-            .CodeBox-code
-                pre.language-js
-                    code.
-                        SnFreeze.freze();
+        +codeBox2(
+            'Freeze',
+            'Freeze',
+            [
+                {
+                    languaje: 'javascript',
+                    code: 'SnFreeze.freze();\nSnFreeze.unFreeze();',
+                }
+            ]
+        )
+            .SnBtn.primary(onclick="startFreeze()") Freeze
+            script.
+                let startFreeze = () => {
+                    SnFreeze.freeze();
+                    setTimeout(() => {
                         SnFreeze.unFreeze();
+                    }, 2000);
+                }
+
+        +codeBox2(
+            'Section Freeze',
+            'Freeze',
+            [
+                {
+                    languaje: 'javascript',
+                    code: 'SnFreeze.freze({ selector: "#freezeSection" });\nSnFreeze.unFreeze("#freezeSection");',
+                }
+            ]
+        )
+            div(style="min-height: 100px")#freezeSection
+                p Freeze Section
+                .SnBtn.primary(onclick="startFreezeSection()") Freeze
+            script.
+                let startFreezeSection = () => {
+                    SnFreeze.freeze({ selector: "#freezeSection" });
+                    setTimeout(() => {
+                        SnFreeze.unFreeze("#freezeSection");
+                    }, 2000);
+                }
+    H2 API
+    h3 freeze
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td selector
+                    td Id html element selector
+                    td string
+                    td body
+                tr 
+                    td text
+                    td text content
+                    td string
+                    td -
+    h3 unFreeze
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td selector
+                    td Id html element selector
+                    td string
+                    td body

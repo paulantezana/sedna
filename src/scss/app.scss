@@ -12,12 +12,11 @@
   flex-direction: column;
   height: 100vh;
   &-footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     margin-top: auto;
-    font-size: 0.7rem;
     text-align: center;
-    opacity: .4;
-    // color: var(--snColorDarkInverse);
-    // background: var(--snColorDark);
+    background: var(--snColorBorder);
   }
 }
 

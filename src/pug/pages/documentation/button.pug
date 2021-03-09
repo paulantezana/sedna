@@ -1,11 +1,11 @@
 extends ../../config/template
 append config
     -title = "Buttons"
-    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-    -ogUrl = "/index.html"
+    -description = "Use Sedna CSS custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -ogUrl = "/documentation/button.html"
     -template = 2
 block main
-    .SnGrid.col-gap.row-gap.l-grid-2
+    .SnMb-5.SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
             'Basic', 
             'There are default button, primary button, success button, warning button, error button and white button in sedna', 
@@ -65,6 +65,21 @@ block main
             .SnBtn-group
                 .SnBtn.loading Default
                 .SnBtn.primary.loading Primary
+        +codeBox(
+            'Icon', 
+            'Buttons only with icons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn icon"><i class="icon-clipboard"></i></div>\n    <div class="SnBtn icon"><i class="icon-facebook"></i></div>\n    <div class="SnBtn icon"><i class="icon-twitter"></i></div>\n    <div class="SnBtn primary icon"><i class="icon-code"></i></div>\n</div>\n'
+        )
+            .SnBtn-group
+                .SnBtn.icon
+                    i.icon-clipboard
+                .SnBtn.icon
+                    i.icon-facebook
+                .SnBtn.icon
+                    i.icon-twitter
+                .SnBtn.primary.icon
+                    i.icon-code
+    h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable
             thead
@@ -72,6 +87,10 @@ block main
                     th Property
                     th Class
             tbody
+                tr
+                    td Button
+                    td
+                        code .SnBtn 
                 tr
                     td Color
                     td
@@ -101,3 +120,7 @@ block main
                     td Group
                     td
                         code .SnBtn-group
+                tr
+                    td Icon
+                    td
+                        code .icon

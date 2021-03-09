@@ -113,6 +113,8 @@ export let SnModal = {
         title = '',
         type = 'question',
         content = '',
+        input = false,
+        inputValue = '',
         okType = 'primary',
         cancelType = '',
         cancelText = 'Cancelar',
@@ -128,6 +130,8 @@ export let SnModal = {
         let cancelTemp = confirm
             ? `<div class="SnBtn ${cancelType}" id="cancel${uniqueIdName}">${cancelText}</div>`
             : '';
+        
+        let inputHtml = input === true ? `<div class="SnModal-confirmInput"><input type="text" class="SnForm-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
 
         // let showIcon = confirm()
         divEl.innerHTML = `
@@ -137,6 +141,7 @@ export let SnModal = {
                         <div class="SnModal-confirmIcon ${type}">${SnIcon[type]}</div>
                         <div class="SnModal-confirmTile">${title}</div>
                         <div class="SnModal-confirmContent">${content}</div>
+                        ${inputHtml}
                         <div class="SnModal-confirmBtns">
                             ${cancelTemp}
                             <div class="SnBtn ${okType}" id="ok${uniqueIdName}">${okText}</div>
@@ -149,13 +154,17 @@ export let SnModal = {
         this.scope.appendChild(divEl);
         this.open(uniqueIdName);
 
+        let inputData = document.getElementById(`input${uniqueIdName}`);
+        if(inputData){
+            inputData.focus();
+        }
         let btnCancel = document.getElementById(`cancel${uniqueIdName}`);
         if (btnCancel) {
             btnCancel.addEventListener('click', e => {
                 e.preventDefault();
                 this.close(uniqueIdName);
                 this.scope.removeChild(divEl);
-                onCancel();
+                onCancel(inputData ? inputData.value : '');
             });
         }
 
@@ -165,7 +174,7 @@ export let SnModal = {
                 e.preventDefault();
                 this.close(uniqueIdName);
                 this.scope.removeChild(divEl);
-                onOk();
+                onOk(inputData ? inputData.value : '');
             });
         }
     },

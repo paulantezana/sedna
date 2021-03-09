@@ -1,8 +1,8 @@
 extends ../../config/template
 append config
     -title = "Tab"
-    -description = "A simple text popup tip."
-    -ogUrl = "/tooltip.html"
+    -description = "Tabs make it easy to switch between different views."
+    -ogUrl = "/documentation/tab.html"
     -template = 2
 
 block main
@@ -30,3 +30,29 @@ block main
 
                     .SnTab-content
                         p Meggings distillery pop-up artisan, hashtag 90's echo park kickstarter gluten-free. Pinterest gentrify squid vinyl chicharrones meh venmo. Beard aesthetic whatever bicycle rights artisan gastropub. Fingerstache bicycle rights you probably haven't heard of them, schlitz franzen semiotics microdosing.
+
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Tab
+                    td
+                        code .SnTab
+                tr
+                    td Header
+                    td
+                        code .SnTab-header
+                tr
+                    td Title
+                    td
+                        code .SnTab-title
+                        code .is-active
+                tr
+                    td Content
+                    td
+                        code .SnTab-content

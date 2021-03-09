@@ -125,43 +125,56 @@ block main
             h3 HTML
             pre.language-html
                 code='<div id="TopMenuDemo-context">\n    <div class="SnBtn" id="TopMenuDemo-toggle">=</div>\n    <div class="TopMenuDemo-wrapper" id="TopMenuDemo-wrapper">\n        <ul class="SnMenu TopMenuDemo" id="TopMenuDemo">\n            <li><a href="#">Menu 1</a></li>\n            <li><a href="#">Menu 2</a></li>\n            <li><a href="#" class="is-toggle">Menu 3<i class="icon-down toggle"></i></a>\n                <ul>\n                    <li><a href="#">SubMenu 1</a></li>\n                    <li><a href="#">SubMenu 2</a></li>\n                    <li><a href="#">SubMenu 3</a></li>\n                    <li><a href="#" class="is-toggle">SubMenu 4<i class="icon-down toggle"></i></a>\n                        <ul>\n                            <li><a href="#">SubMenu 1</a></li>\n                            <li><a href="#">SubMenu 2</a></li>\n                            <li><a href="#">SubMenu 3</a></li>\n                            <li><a href="#">SubMenu 4</a></li>\n                        </ul>\n                    </li>\n                </ul>\n            </li>\n            <li> <a href="#" class="is-toggle">Menu 4<i class="icon-down toggle"></i></a>\n                <ul>\n                    <li><a href="#">SubMenu 1</a></li>\n                    <li><a href="#" class="is-toggle">SubMenu 2<i class="icon-down toggle"></i></a>\n                        <ul>\n                            <li><a href="#">SubMenu 1</a></li>\n                            <li><a href="#">SubMenu 2</a></li>\n                            <li><a href="#">SubMenu 3</a></li>\n                            <li><a href="#">SubMenu 4</a></li>\n                        </ul>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</div>'
-    h3 API
-    table.SnTable
-        thead
-            tr
-                th Propiedad
-                th Descripción
-                th Tipo
-                th Default
-                th Versión
-        tbody
-            tr
-                td menuId
-                td id del menu
-                td string
-                td Menu
-                td
-            tr
-                td toggleButtonID
-                td botton que ocula y muestra el menu
-                td string
-                td Menu-toggle
-                td
-            tr
-                td contextId
-                td Contexto donde trabaja el menu
-                td string
-                td Site
-                td
-            tr
-                td toggleClass
-                td clase css que se agrega o quita al contexto para mostrar o ocular el menu.
-                td string
-                td Menu-is-show
-                td
-            tr
-                td menuCloseID
-                td
-                td string
-                td 
-                td
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Propiedad
+                    th Descripción
+                    th Tipo
+                    th Default
+                    th Versión
+            tbody
+                tr
+                    td menuId
+                    td id del menu
+                    td string
+                    td SnMenu
+                    td
+                tr
+                    td toggleButtonID
+                    td botton que ocula y muestra el menu
+                    td string
+                    td SnMenu-toggle
+                    td
+                tr
+                    td contextId
+                    td Contexto donde trabaja el menu
+                    td string
+                    td Site
+                    td
+                tr
+                    td toggleClass
+                    td clase css que se agrega o quita al contexto para mostrar o ocular el menu.
+                    td string
+                    td SnMenu-is-show
+                    td
+                tr
+                    td menuCloseID
+                    td id of the element from where the menu will be closed
+                    td string
+                    td 
+                    td
+                tr
+                    td iconClassDown
+                    td icon to open a submenu
+                    td string
+                    td icon-down
+                    td
+                tr
+                    td iconClassUp
+                    td icon to close a submenu
+                    td string
+                    td icon-up
+                    td

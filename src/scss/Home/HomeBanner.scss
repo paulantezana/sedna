@@ -26,11 +26,14 @@
     position: relative;
     z-index: 5;
     // color: var(--snColor1Inverse);
-
+    img{
+      width: 100px;
+    }
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 100;
       margin-bottom: 0;
+      line-height: 1em;
     }
     p {
       margin-bottom: 2rem;

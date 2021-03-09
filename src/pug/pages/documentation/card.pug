@@ -2,7 +2,7 @@ extends ../../config/template
 append config
     -title = "Cards"
     -description = "Simple rectangular container."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/card.html"
     -template = 2
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
@@ -26,3 +26,32 @@ block main
                 .SnCard-body
                     h2.SnCard-title Card title
                     p.SnCard-description Card content ...
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Card
+                    td
+                        code .SnCard
+                        code .hoverable
+                tr
+                    td Header
+                    td
+                        code .SnCard-header
+                tr
+                    td Body
+                    td
+                        code .SnCard-body
+                tr
+                    td Title
+                    td
+                        code .SnCard-title
+                tr
+                    td Description
+                    td
+                        code .SnCard-description

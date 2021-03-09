@@ -31,6 +31,9 @@
     &::placeholder{
        color: var(--snColorBorder);
     }
+    &:disabled{
+        border-color: var(--snColorBg);
+    }
 }
 
 @mixin SnForm {

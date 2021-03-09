@@ -5,21 +5,24 @@ append config
     -ogUrl = "/index.html"
     -template = 2
 block main
-    section.CodeBox
-        .CodeBox-demo
-        .CodeBox-meta
-            .CodeBox-title Only SCSS
-            .CodeBox-description
-            .CodeBox-actions
-                //- a(href="#" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
-                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
-                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
-        .CodeBox-code
-            pre.language-scss
-                code.
-                    @include from(l){
-                        // css styles
-                    }
-                    @include to(l){
-                        // css styles
-                    }
+    pre.language-scss
+        code.
+            $breakpoints : (
+                s : 0,
+                m : 640px,
+                l : 1024px,
+                lg : 1024px,
+                xl : 1440px
+            );
+    p Default break points
+
+    +codeBox2(
+        'Only SCSS',
+        'It is available only in the scss version',
+        [
+            {
+                languaje: 'scss',
+                code: '@include from(l){\n    // css styles\n}\n@include to(l){\n    // css styles\n}\n',
+            }
+        ]
+    )

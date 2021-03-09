@@ -1,15 +1,33 @@
 extends ../../config/template
 append config
     -title = "Avatar"
-    -description = "Use Sedna custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
-    -ogUrl = "/index.html"
+    -description = "Avatars can be used to represent people or objects. It supports images or letters."
+    -ogUrl = "/documentation/avatar.html"
     -template = 2
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
             'Basic', 
-            '', 
-            '<div class="SnAvatar">\n   <img src="/assets/images/logo.png", alt=""/>\n</div>'
+            'Image avatar and text avatar.', 
+            '<div class="SnAvatar">\n    <img src="/assets/images/avatar.svg" alt="">\n</div>\n<div class="SnAvatar">\n    <div class="SnAvatar-text">VD</div>\n</div>\n'
         )
             .SnAvatar
-                img(src="/assets/images/logo.png" alt="")
+                img(src="/assets/images/avatar.svg" alt="")
+            .SnAvatar
+                .SnAvatar-text VD
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Avatar
+                    td
+                        code .SnAvatar
+                tr
+                    td Text
+                    td
+                        code .SnAvatar-text

@@ -45,7 +45,7 @@ pugPages = pugPages.map(item => {
 module.exports = {
     entry: {
         sedna: './src/sedna.js',
-        app: ['babel-polyfill','./src/app.js'],
+        app: ['babel-polyfill', './src/app.js'],
     },
     output: {
         path: path.resolve(__dirname, "docs"),
@@ -63,16 +63,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
+                    // 'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     {
                         loader: 'css-loader',
                         options: {
-                            // url: false,
-                            // minimize: true,
-                            sourceMap: true,
-                            // modules: true,
-                            // localIdentName: '[local]__[hash:base64:5]',
+                            sourceMap: true
                         }
                     },
                     {
@@ -88,7 +86,24 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
-                use: ['html-loader', 'pug-html-loader']
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            sources: {
+                                urlFilter: (attribute, value, resourcePath) => {
+                                    if (/^\/assets\//.test(value)) {
+                                        return false;
+                                    }
+                                    return true;
+                                },
+                            },
+                        },
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                    }
+                ]
             },
             {
                 test: /\.js$/,
@@ -100,7 +115,7 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "assets/css/[name].css",
-            chunkFilename: "[id].css"
+            // chunkFilename: "[id].css"
         }),
         ...pugPages,
     ]

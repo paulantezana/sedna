@@ -24,49 +24,49 @@
     display: inline-block;
   }
 
-  :root{
-    --snColor1Lighter4: #E6F7FF;
-    --snColor1Lighter3: #BAE7FF;
-    --snColor1Lighter2: #91D5FF;
-    --snColor1Lighter: #69C0FF;
-    --snColor1Light: #40A9FF;
-    --snColor1: #1890FF;
-    --snColor1Dark: #096DD9;
-    --snColor1Darker: #0050B3;
-    --snColor1Darker2: #003A8C;
+  :root {
+    --snColor1Lighter4: #e6f7ff;
+    --snColor1Lighter3: #bae7ff;
+    --snColor1Lighter2: #91d5ff;
+    --snColor1Lighter: #69c0ff;
+    --snColor1Light: #40a9ff;
+    --snColor1: #1890ff;
+    --snColor1Dark: #096dd9;
+    --snColor1Darker: #0050b3;
+    --snColor1Darker2: #003a8c;
     --snColor1Darker3: #002766;
-    --snColor1Inverse: #FFFFFF;
-    
+    --snColor1Inverse: #ffffff;
+
     --snColor2Lighter: #ffd685;
     --snColor2Light: #ffc757;
     --snColor2: #faad14;
     --snColor2Dark: #ffa600;
     --snColor2Darker: #eb9c00;
-    --snColor2Inverse: #FFFFFF;
+    --snColor2Inverse: #ffffff;
 
-    --snErrorLight: #FF4D4F;
-    --snError: #F5222D;
-    --snErrorDark: #CF1322;
+    --snErrorLight: #ff4d4f;
+    --snError: #f5222d;
+    --snErrorDark: #cf1322;
     --snErrorInverse: white;
 
-    --snSuccessLight: #73D13D;
-    --snSuccess: #52C41A;
-    --snSuccessDark: #389E0D;
+    --snSuccessLight: #73d13d;
+    --snSuccess: #52c41a;
+    --snSuccessDark: #389e0d;
     --snSuccessInverse: white;
 
-    --snWarningLight: #FFEC3D;
-    --snWarning: #FADB14;
-    --snWarningDark: #D4B106;
+    --snWarningLight: #ffec3d;
+    --snWarning: #fadb14;
+    --snWarningDark: #d4b106;
     --snWarningInverse: #3d2501;
 
-    --snColorBg: #EFF3F6;
+    --snColorBg: #eff3f6;
     --snColorBgAlt: #ffffff;
     --snColorHover: #0000000d;
 
     --snColorText: #333333;
-    --snColorTextAlt: #ABABAB;
+    --snColorTextAlt: #ababab;
 
-    --snColorBorder: #DFE2E2;
+    --snColorBorder: #dfe2e2;
 
     --snColorDarkSmoother: #4f7087;
     --snColorDarkSmooth: #3c5567;
@@ -74,5 +74,5 @@
     --snColorDarker: #22303a;
     --snColorDarkest: #1a252d;
     --snColorDarkInverse: #b6bcc0;
-}
+  }
 }

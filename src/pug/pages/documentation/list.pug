@@ -2,14 +2,13 @@ extends ../../config/template
 append config
     -title = "List"
     -description = "Simple List."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/list.html"
     -template = 2
-
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
-            'Basic', 
-            'Simple List.', 
+            'Basic',
+            'Simple List.',
             '<ul class="SnList">\n    <li>item 1</li>\n    <li>item 2</li>\n    <li>item 3</li>\n    <li>item 4</li>\n</ul>'
         )
             ul.SnList
@@ -17,3 +16,15 @@ block main
                 li item 2
                 li item 3
                 li item 4
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td List
+                    td
+                        code .SnList

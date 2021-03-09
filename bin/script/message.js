@@ -13,7 +13,7 @@ export let SnMessage = {
     warning({ content = '', duration = 6000 }) {
         this.message(content, duration, 'warning', 'warning');
     },
-    message(message, time, addClass = 'default', type = "question") {
+    message(message, time, addClass = 'default', type = 'question') {
         if (!time || time === 'default') {
             time = 20000;
         }

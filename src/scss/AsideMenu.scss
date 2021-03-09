@@ -5,7 +5,7 @@ $asideMenuWidth: 220px;
         font-weight: 500;
         padding: 8px 0;
         color: var(--snColorTextAlt);
-        font-size: .8em;
+        font-size: .9em;
     }
     &-item{
         padding-left: 8px;
@@ -31,6 +31,9 @@ $asideMenuWidth: 220px;
     &-nav{
         overflow-y: auto;
         height: 100%;
+        @include to(l){
+            padding: .5rem;
+        }
     }
     &-container{
         @include to(l){
@@ -67,9 +70,7 @@ $asideMenuWidth: 220px;
     border-left: var(--snColorBg);
     border-radius: 0 10px 10px 0;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.4rem;
     @include from(l){
         display: none;
     }

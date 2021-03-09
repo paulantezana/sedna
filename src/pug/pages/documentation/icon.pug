@@ -1,8 +1,8 @@
 extends ../../config/template
 append config
     -title = "Icons"
-    -description = "Icon."
-    -ogUrl = "/index.html"
+    -description = "Default icons supported by Sedna CSS."
+    -ogUrl = "/documentation/icon.html"
     -template = 2
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
@@ -21,3 +21,19 @@ block main
                 .CodeBox [class*="SnIcon-"] {
                     font-size: 1.3rem;
                 }
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Icon
+                    td
+                        code .SnIcon-info
+                        code .SnIcon-question
+                        code .SnIcon-success
+                        code .SnIcon-warning
+                        code .SnIcon-error

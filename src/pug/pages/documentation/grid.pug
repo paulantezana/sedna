@@ -2,9 +2,8 @@ extends ../../config/template
 append config
     -title = "Grids"
     -description = "24 Grids System."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/grid.html"
     -template = 2
-
 block main
     pre.language-scss
         code.
@@ -24,7 +23,7 @@ block main
             'Any direct child of .SnGrid is automatically an item in the layout. And it will automatically take a column from its container.', 
             '<div class="SnGrid col-gap s-grid-3">\n    <div>1</div>\n    <div>2</div>\n    <div>3</div>\n</div>'
         )
-            .SnGrid.col-gap.s-grid-3
+            .SnGrid.col-gap.s-grid-3.DocGrid
                 div 1
                 div 2
                 div 3
@@ -33,7 +32,7 @@ block main
             '', 
             '<div class="SnGrid col-gap s-grid-4">\n    <div>1</div>\n    <div class="s-col-3">2</div>\n</div>'
         )
-            .SnGrid.col-gap.s-grid-4
+            .SnGrid.col-gap.s-grid-4.DocGrid
                 div 1
                 div.s-col-3 2
         +codeBox(
@@ -41,7 +40,7 @@ block main
             '',
             '<div class="SnGrid col-gap row-gap s-grid-2 m-grid-3 l-grid-4 lg-grid-5 xl-grid-6">\n    <div>1</div>\n    <div>2</div>\n    <div>3</div>\n    <div>4</div>\n    <div>5</div>\n    <div>6</div>\n    <div>7</div>\n</div>\n'
         )
-            .SnGrid.col-gap.row-gap.s-grid-2.m-grid-3.l-grid-4.lg-grid-5.xl-grid-6
+            .SnGrid.col-gap.row-gap.s-grid-2.m-grid-3.l-grid-4.lg-grid-5.xl-grid-6.DocGrid
                 div 1
                 div 2
                 div 3
@@ -54,7 +53,7 @@ block main
             '',
             '<div class="SnGrid col-gap row-gap s-grid-2">\n    <div class="s-row-2">1</div>\n    <div>2</div>\n    <div>3</div>\n</div>\n'
         )
-            .SnGrid.col-gap.row-gap.s-grid-2
+            .SnGrid.col-gap.row-gap.s-grid-2.DocGrid
                 div.s-row-2 1
                 div 2
                 div 3
@@ -63,7 +62,7 @@ block main
             '',
             '<div class="SnGrid col-gap row-gap s-grid-4">\n    <div class="s-row-2">1</div>\n    <div>2</div>\n    <div class="s-y-2 s-x-2 s-col-2">3</div>\n    <div>4</div>\n    <div class="s-row-2">5</div>\n</div>\n'
         )
-            .SnGrid.col-gap.row-gap.s-grid-4
+            .SnGrid.col-gap.row-gap.s-grid-4.DocGrid
                 div.s-row-2 1
                 div 2
                 div.s-y-2.s-x-2.s-col-2 3
@@ -74,14 +73,15 @@ block main
             '',
             '<div class="SnGrid col-gap row-gap l-grid-4">\n    <div class="s-col-3 SnGrid col-gap row-gap s-grid-3">\n        <div class="s-col-3">1</div>\n        <div>2</div>\n        <div>3</div>\n        <div>4</div>\n    </div>\n    <div>5</div>\n</div>\n'
         )
-            .SnGrid.col-gap.row-gap.l-grid-4
-                div.s-col-3.SnGrid.col-gap.row-gap.s-grid-3
+            .SnGrid.col-gap.row-gap.l-grid-4.DocGrid
+                div.s-col-3.SnGrid.col-gap.row-gap.s-grid-3.DocGrid
                     div.s-col-3 1
                     div 2
                     div 3
                     div 4
                 div 5
 
+    h2 API
     .SnTable-wrapper.SnMt-5
         table.SnTable.DocApiTable
             thead

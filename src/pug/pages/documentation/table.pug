@@ -2,7 +2,7 @@ extends ../../config/template
 append config
     -title = "Table"
     -description = "A table displays rows of data."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/table.html"
     -template = 2
 
 block main
@@ -61,3 +61,24 @@ block main
                     }
                 });
             }
+
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Table
+                    td
+                        code .SnTable
+                tr
+                    td Wrapper
+                    td
+                        code .SnTable-wrapper
+                tr
+                    td Actions
+                    td
+                        code .SnTable-action

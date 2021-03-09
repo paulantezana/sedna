@@ -2,9 +2,8 @@ extends ../../config/template
 append config
     -title = "Alerts"
     -description = "Alert component for feedback."
-    -ogUrl = "/index.html"
+    -ogUrl = "/documentation/alert.html"
     -template = 2
-
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox2(
@@ -32,3 +31,22 @@ block main
             .SnAlert.error 
                 span.SnIcon-error
                 | message in alert
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Alert
+                    td
+                        code .SnAlert
+                tr
+                    td Color
+                    td
+                        code .success
+                        code .info
+                        code .warning
+                        code .error

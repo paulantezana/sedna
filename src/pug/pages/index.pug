@@ -1,36 +1,26 @@
 extends ../config/template
 append config
     -title = "Libreria Sass/CSS para construir layouts web responsive"
-    -description = "Libreria Sass/CSS para construir layouts web responsive"
+    //- -description = "Libreria Sass/CSS para construir layouts web responsive"
     -ogUrl = "/index.html"
 
 block main
     main
         section.HomeBanner
-            //- img.HomeBanner-bg(src="/assets/images/banner-bg.jpg" alt="")
+            //- img.HomeBanner-bg(src="/assets/images/banner.jpg" alt="")
             .HomeBanner-content
                 .SnContainer
-                    h1 Sedna
-                        span= ' ' + appVersion
-                    p Sedna is a component-based CSS library.
+                    //- img(src="/assets/images/logo.svg", alt="logo")
+                    h1= libraryName
+                    span= 'Currently ' + appVersion
+                    p(style="max-width: 500px; margin-right: auto; margin-left: auto;") A minimalist CSS framework
                     .SnBtn-group
                         a(href="/documentation/starter.html").SnBtn.primary.lg Getting Started
                         a(href="https://github.com/paulantezana/Sedna" target="_blanck").SnBtn.lg GitHub
         .HomeIntro
             .SnContainer
-                //- h2.HomeIntro-title DOWNLOAD SEDNA
                 .HomeIntro-video
                     .HomeIntro-videoPlay(data-modaltrigger="videoPlay")
-                    //- span play video
-                //- .SnGrid.m-grid-2
-                //-     .HomeIntro-item
-                //-         a(href="/assets/css/sedna.css").SnBtn.white
-                //-             div Download Sedna css
-                //-             small= ' ' + appVersion + ' — 23 kB gzipped'
-                //-     .HomeIntro-item
-                //-         a(href="/assets/script/sedna.js").SnBtn.warning
-                //-             div Download Sedna js
-                //-             small= ' ' + appVersion + ' — 18 kB gzipped'
                 .SnModal-wrapper(data-modal="videoPlay")
                     .SnModal
                         .SnModal-close(data-modalclose="videoPlay")

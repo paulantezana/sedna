@@ -33,6 +33,7 @@
     @include SnCollapse();
     @include SnDivider();
     @include SnEmpty();
+    @include SnControlGroup();
 
     // Leyout
     @include SnContainer();

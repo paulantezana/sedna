@@ -103,6 +103,7 @@
       font-size: 16px;
       line-height: $iconSize;
     }
+    &-confirmInput,
     &-confirmContent{
       color: var(--snColorTextAlt);
       margin-top: 8px;

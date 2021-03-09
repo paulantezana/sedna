@@ -6,7 +6,7 @@ append config
     -template = 2
 
 block main
-    .SnGrid.l-grid-2
+    .SnGrid.col-gap.row-gap.l-grid-2
         section.CodeBox
             .CodeBox-demo
                 .SnBtn.primary(onclick="SnMessage.info({content: 'This is a normal message'})") Display normal message
@@ -64,3 +64,59 @@ block main
                             content: 'This is a prompt message for success, and it will disappear in 10 seconds',
                             duration: 10000,
                         })
+
+
+    H2 API
+    h3 SnMessage
+    p info, success, error, warning
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td content
+                    td Message text content
+                    td string
+                    td -
+                tr 
+                    td duration
+                    td time duration
+                    td integer
+                    td 6000
+    h3 Custom Message
+    pre
+        code= "SnMessage.message(message, time, addClass = 'default', type = 'question')"
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td message
+                    td Message text content
+                    td string
+                    td -
+                tr 
+                    td time
+                    td time duration
+                    td integer
+                    td 20000
+                tr 
+                    td addClass
+                    td custom class name
+                    td string
+                    td default
+                tr 
+                    td type
+                    td Sedna icon
+                    td string
+                    td question
