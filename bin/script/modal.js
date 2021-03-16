@@ -13,14 +13,17 @@ export let SnModal = {
     init() {
         this.render();
 
-        // Find all modals
+        // Modal close the mask
         this.dataModals = document.querySelectorAll('[data-modal]')
         for (let i = 0; i < this.dataModals.length; i++) {
-            this.dataModals[i].addEventListener('click', (event) => {
-
-                let modalName = this.dataModals[i].dataset.modal
-                this.close(modalName)
-            })
+            let maskClose = this.dataModals[i].dataset.maskclose || true;
+            console.log(maskClose,'maskClose');
+            if(maskClose === true || maskClose === "true"){
+                this.dataModals[i].addEventListener('click', (event) => {
+                    let modalName = this.dataModals[i].dataset.modal
+                    this.close(modalName)
+                })
+            }
         }
 
         // Modal button trigger open
