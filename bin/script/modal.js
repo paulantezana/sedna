@@ -17,7 +17,6 @@ export let SnModal = {
         this.dataModals = document.querySelectorAll('[data-modal]')
         for (let i = 0; i < this.dataModals.length; i++) {
             let maskClose = this.dataModals[i].dataset.maskclose || true;
-            console.log(maskClose,'maskClose');
             if(maskClose === true || maskClose === "true"){
                 this.dataModals[i].addEventListener('click', (event) => {
                     let modalName = this.dataModals[i].dataset.modal

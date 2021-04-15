@@ -79,6 +79,45 @@ block main
                     i.icon-twitter
                 .SnBtn.primary.icon
                     i.icon-code
+                .SnBtn.icon.loading
+                    i.icon-code
+        +codeBox(
+            'Radio', 
+            'Buttons radio only with icons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn icon"><i class="icon-clipboard"></i></div>\n    <div class="SnBtn icon"><i class="icon-facebook"></i></div>\n    <div class="SnBtn icon"><i class="icon-twitter"></i></div>\n    <div class="SnBtn primary icon"><i class="icon-code"></i></div>\n</div>\n'
+        )
+
+            div
+                .SnBtn.primary.icon.sm
+                    i.icon-twitter
+                .SnBtn.icon
+                    i.icon-twitter
+                .SnBtn.icon.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.icon.loading.sm
+                    i.icon-twitter
+                .SnBtn.icon.loading
+                    i.icon-twitter
+                .SnBtn.icon.loading.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.icon.loading.radio.sm
+                    i.icon-twitter
+                .SnBtn.icon.loading.radio
+                    i.icon-twitter
+                .SnBtn.icon.loading.radio.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.loading.radio.sm
+                    i.icon-twitter.SnMr-2
+                    | twitter
+                .SnBtn.loading.radio
+                    i.icon-twitter.SnMr-2
+                    | twitter
+                .SnBtn.loading.radio.lg
+                    i.icon-twitter.SnMr-2
+                    | twitter
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable

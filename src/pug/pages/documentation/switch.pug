@@ -12,9 +12,7 @@ block main
             'Switch checkbox example',
             '<div class="SnSwitch">\n    <input class="SnSwitch-control" id="example" type="checkbox">\n    <label class="SnSwitch-label" for="example"></label>\n</div>\n'
         )
-            .SnSwitch
-                input#example(type="checkbox").SnSwitch-control
-                label(for="example").SnSwitch-label
+            input#example(type="checkbox")
 
         +codeBox(
             'radio',
@@ -22,12 +20,6 @@ block main
             '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
         )
             div(style="display: flex;")
-                .SnSwitch
-                    input#radio1(type="radio" name="example1").SnSwitch-control
-                    label(for="radio1").SnSwitch-label
-                .SnSwitch
-                    input#radio2(type="radio" name="example1").SnSwitch-control
-                    label(for="radio2").SnSwitch-label
-                .SnSwitch
-                    input#radio3(type="radio" name="example1").SnSwitch-control
-                    label(for="radio3").SnSwitch-label
+                input#radio1(type="radio" name="example1")
+                input#radio2(type="radio" name="example1")
+                input#radio3(type="radio" name="example1")

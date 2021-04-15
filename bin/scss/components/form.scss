@@ -15,7 +15,7 @@
     border-radius: 4px;
     line-height: 1.5em;
     display: inline-block;
-    height: $controlHeight;
+    height: calc(#{$controlHeight} + 2px);
     width: 100%;
     //box-sizing: border-box;
     &:hover {
@@ -95,6 +95,30 @@
                     color: var(--snSuccess);
                 }
             }
+            &.inner{
+                position: relative;
+                $innerPaddingTop: 18px;
+                .SnForm {
+                    &-label {
+                        position: absolute;
+                        z-index: 1;
+                        top: 4px;
+                        left: 11px;
+                        font-size: 0.7rem;
+                        pointer-events: none;
+                    }
+                    &-control {
+                        height: calc(#{$controlHeight} + #{$innerPaddingTop});
+                        padding-top: $innerPaddingTop;
+                        &.sm{
+                            height: calc(#{$controlHeightSm} + 2px + #{$innerPaddingTop});
+                        }
+                        &.lg{
+                            height: calc(#{$controlHeightLg} + 2px + #{$innerPaddingTop});
+                        }
+                    }
+                }
+            }
         }
         &-label {
             display: block;
@@ -106,10 +130,10 @@
         &-control {
             @include FormControl;
             &.sm{
-                height: $controlHeightSm;
+                height: calc(#{$controlHeightSm} + 2px);
             }
             &.lg{
-                height: $controlHeightLg;
+                height: calc(#{$controlHeightLg} + 2px);
             }
         }
     }

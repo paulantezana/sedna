@@ -44,8 +44,8 @@ block main
                     textarea#message(name="message" cols="3" rows="5").SnForm-control
         +codeBox(
             'Help', 
-            'Fill in this form to create a new account for you.', 
-            '<form class="SnForm horizontal" action="" method="post">\n    <div class="SnForm-item required">\n        <label class="SnForm-label" for="fullName">Full Name</label>\n        <input class="SnForm-control" id="fullName" type="text" name="fullName">\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="adress">Adress</label>\n        <input class="SnForm-control" id="adress" type="text" name="adress">\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="gender">Gender</label>\n        <select class="SnForm-control" id="gender" name="gender">\n            <option value="man">Man</option>\n            <option value="woman">Woman</option>\n        </select>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="message">Message</label>\n        <textarea class="SnForm-textarea" id="message" name="message" cols="3" rows="10"></textarea>\n    </div>\n</form>'
+            'Form validate.', 
+            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item required has-error">\n        <label class="SnForm-label" for="item1">Item1</label>\n        <input class="SnForm-control" id="item1" type="text" name="item1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item has-success">\n        <label class="SnForm-label" for="item2">Item2</label>\n        <input class="SnForm-control" id="item2" type="text" name="item2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item3">Item3</label>\n        <select class="SnForm-control" id="item3" name="item3">\n            <option value="man">Man</option>\n            <option value="woman">Woman</option>\n        </select>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item4">Item4</label>\n        <textarea class="SnForm-control" id="item4" name="item4" cols="3" rows="5"></textarea>\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
         )
             form(action="" method="post").SnForm
                 .SnForm-item.required.has-error
@@ -68,8 +68,8 @@ block main
                     .SnForm-help Help text
         +codeBox(
             'Size', 
-            'Fill in this form to create a new account for you.', 
-            '<form class="SnForm horizontal" action="" method="post">\n    <div class="SnForm-item required">\n        <label class="SnForm-label" for="fullName">Full Name</label>\n        <input class="SnForm-control" id="fullName" type="text" name="fullName">\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="adress">Adress</label>\n        <input class="SnForm-control" id="adress" type="text" name="adress">\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="gender">Gender</label>\n        <select class="SnForm-control" id="gender" name="gender">\n            <option value="man">Man</option>\n            <option value="woman">Woman</option>\n        </select>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="message">Message</label>\n        <textarea class="SnForm-textarea" id="message" name="message" cols="3" rows="10"></textarea>\n    </div>\n</form>'
+            'Input sizes.', 
+            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item"><label class="SnForm-label" for="size1">Size1</label>\n        <input class="SnForm-control sm" id="size1" type="text" name="size1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item"><label class="SnForm-label" for="size2">Size2</label>\n        <input class="SnForm-control" id="size2" type="text" name="size2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item"><label class="SnForm-label" for="size3">Size3</label>\n        <input class="SnForm-control lg" id="size3" type="text" name="size3">\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
         )
             form(action="" method="post").SnForm
                 .SnForm-item
@@ -81,6 +81,24 @@ block main
                     input#size2(type="text" name="size2").SnForm-control
                     .SnForm-help Help text
                 .SnForm-item
+                    label(for="size3").SnForm-label Size3
+                    input#size3(type="text" name="size3").SnForm-control.lg
+                    .SnForm-help Help text
+        +codeBox(
+            'Inner', 
+            'Label inner.', 
+            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size1">Size1</label>\n        <input class="SnForm-control sm" id="size1" type="text" name="size1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size2">Size2</label>\n        <input class="SnForm-control" id="size2" type="text" name="size2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size3">Size3</label>\n        <input class="SnForm-control lg" id="size3" type="text" name="size3">\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
+        )
+            form(action="" method="post").SnForm
+                .SnForm-item.inner
+                    label(for="size1").SnForm-label Size1
+                    input#size1(type="text" name="size1").SnForm-control.sm
+                    .SnForm-help Help text
+                .SnForm-item.inner
+                    label(for="size2").SnForm-label Size2
+                    input#size2(type="text" name="size2").SnForm-control
+                    .SnForm-help Help text
+                .SnForm-item.inner
                     label(for="size3").SnForm-label Size3
                     input#size3(type="text" name="size3").SnForm-control.lg
                     .SnForm-help Help text
