@@ -118,6 +118,14 @@
                         }
                     }
                 }
+                .SnControl{
+                    &-prefix {
+                        margin-top: $innerPaddingTop / 3;
+                    }
+                    &-suffix {
+                        margin-top: $innerPaddingTop / 3;
+                    }
+                }
             }
         }
         &-label {

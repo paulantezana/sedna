@@ -91,16 +91,22 @@ block main
         )
             form(action="" method="post").SnForm
                 .SnForm-item.inner
-                    label(for="size1").SnForm-label Size1
-                    input#size1(type="text" name="size1").SnForm-control.sm
+                    label(for="innerSize1").SnForm-label Size1
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        input(type="text" id="innerSize1").SnForm-control.SnControl.sm
                     .SnForm-help Help text
                 .SnForm-item.inner
-                    label(for="size2").SnForm-label Size2
-                    input#size2(type="text" name="size2").SnForm-control
+                    label(for="innerSize2").SnForm-label Size2
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        input(type="text" id="innerSize2").SnForm-control.SnControl
                     .SnForm-help Help text
                 .SnForm-item.inner
-                    label(for="size3").SnForm-label Size3
-                    input#size3(type="text" name="size3").SnForm-control.lg
+                    label(for="innerSize3").SnForm-label Size3
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        input(type="text" id="innerSize3").SnForm-control.SnControl.lg
                     .SnForm-help Help text
     h2 API
     .SnTable-wrapper
